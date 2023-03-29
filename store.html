@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Collezionabili Online</title>
+    <link rel="stylesheet" href="store.css">
+    <link rel="stylesheet" href="animation.css">
+    <script src="buyAnimation.js"></script>
+    <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
+  </head>
+  <body>
+    <div class="main">
+    <!-- Elementi per animazione spacchettamento-->
+    <div class="lock" id="lock"></div>
+    <div class="banner banner1 hidden" id="b1"></div>
+    <div class="banner banner2 hidden" id="b2"></div>
+    <div class="banner banner3 hidden" id="b3"></div>
+
+    <div class="menu-bar">
+       <div class="central">
+          <ul>
+            <li><h3>Collezione</h3></li>
+            <li><h3>Negozio</h3></li>
+          </ul>
+       </div>
+    </div>
+    <div class="central">
+      <img class="crystal" src="Assets/NicePng_crystal-png_282014.png" alt="">
+    </div>
+    <div class="central">
+      <p class="amount">0/100</p>
+      <button class="buy-button" onclick="buyAnim()" id="buy-button">Acquista</button>
+      <p class="desc">Ogni pacchetto contiene uan carta casuale non posseduta</p>
+    </div>
+    </div>
+  </body>
+</html>

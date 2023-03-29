@@ -1,0 +1,68 @@
+body{
+    margin: 0px;
+    background-image: url("Assets/Star_Bg.png");
+}
+
+ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+li{
+    display: inline-block;
+    padding-left: 15px;
+}
+
+div.central{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+div.menu-bar{
+    position: absolute;
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+    background-color: rgb(23, 23, 81);
+    color: antiquewhite;
+    z-index: 99;
+}
+
+img.crystal{
+    position: absolute;
+    top: 32%;
+    width: 125px;
+    height: 160px;
+    opacity: 95%;
+}
+
+p.amount{
+    position: absolute;
+    top: 53%;
+    font-size: 25px;
+    color: brown;
+}
+
+button.buy-button{
+    position: absolute;
+    top: 65%;
+    padding: 7px 12px;
+    border-radius: 15px;
+    border-style: none;
+    color: rgb(255, 255, 255);
+    background-color: hwb(191 21% 47%);
+}
+
+button.buy-button:hover{
+    cursor: pointer;
+    background-color: rgb(46, 62, 118);
+}
+
+p.desc{
+    position: absolute;
+    top: 70%;
+    font-size: 15px;
+    color: brown;
+}
