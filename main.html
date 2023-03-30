@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carte Collezionabili Online</title>
     <link rel="stylesheet" href="store.css">
+    <link rel="stylesheet" href="main.css">
     <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
   </head>
   <body>
-    <button class="buy-button">Prova</button>
+    <div class="card-container"
+      onclick="(() =>{
+      alert('click');
+      Document.getElementById('card').classList.add('is-flipped');
+      })"
+      >
+      <div class="card" id="card">
+        <div class="card-front"></div>
+        <div class="card-back">
+          <img src="Assets/sapienza.jpg" 
+            class="back-image"
+            alt="sapienza logo">
+        </div>
+      </div>
+    </div>
   </body>

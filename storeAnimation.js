@@ -11,5 +11,10 @@ function buyAnim(){
     setTimeout(()=>{
         document.getElementById("b3").classList.remove("hidden")
     }, 600)
-
+    setTimeout(()=>{
+        document.getElementById("horizontal").classList.add("p1")
+    }, 800)
+    setTimeout(()=>{
+        document.getElementById("horizontal").classList.add("p2")
+    }, 1100)
 }

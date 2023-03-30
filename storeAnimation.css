@@ -47,3 +47,26 @@ div.banner{
     bottom: 101%;
     pointer-events: all;
 }
+
+div.horizontal-banner{
+    position: fixed;
+    top: 45%;
+    left: -102%;
+    height: 10%;
+    width: 100%;
+    padding: 1px;
+    background: #7f077bfe;
+    z-index: 101;
+    pointer-events: none;
+    transition: 0.40s ease-out;
+}
+
+.horizontal-banner.p1{
+    left: 0%;
+}
+
+.horizontal-banner.p2{
+    top: 40%;
+    height: 20%;
+    transition: 0.50s ease-in;
+}
