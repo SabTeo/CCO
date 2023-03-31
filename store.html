@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carte Collezionabili Online</title>
+  <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="store.css">
   <link rel="stylesheet" href="storeAnimation.css">
   <script src="storeAnimation.js"></script>
@@ -38,10 +39,29 @@
     </div>
     <div class="central">
       <p class="amount">0/100</p>
-      <button class="buy-button" onclick="buyAnim()" id="buy-button">Acquista</button>
+      <button class="button" onclick="buyAnim()" id="buy-button">Acquista</button>
       <p class="desc">Ogni pacchetto contiene uan carta casuale non posseduta</p>
     </div>
-    <!-- le righe seguenti devono essere inserite dal server-->
+
+    <div class="central">
+      <button class="button invisible" onclick="window.location.reload()" id="end-button" 
+        style="top:75%; z-index:102; transition:1s;" 
+        >OK</button>
+    </div>
+
+    <div class="central">
+      <!-- le righe seguenti devono essere modificate dal server-->
+      <div class="card-container" id="card-container">
+        <div class="card card-new hidden" id="card-new">    
+          <div class="card-rev-front">
+            <img src="Assets/sapienza.jpg" 
+               class="back-image"
+               alt="sapienza logo">
+            </div>
+            <div class="card-rev-back">Stasera lol?</div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </body>

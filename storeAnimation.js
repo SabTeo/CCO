@@ -17,4 +17,10 @@ function buyAnim(){
     setTimeout(()=>{
         document.getElementById("horizontal").classList.add("p2")
     }, 1100)
+    setTimeout(()=>{
+        document.getElementById("card-new").classList.remove("hidden")
+    }, 1400)
+    setTimeout(()=>{
+        document.getElementById("end-button").classList.remove("invisible")
+    }, 2200)
 }

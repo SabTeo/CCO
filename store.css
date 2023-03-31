@@ -1,6 +1,13 @@
+/*Bottone Ok definito in store.html*/
+
 body{
     margin: 0px;
     background-image: url("Assets/star_Bg.png");
+}
+
+.invisible{
+    opacity: 0%;
+    pointer-events: none;
 }
 
 ul{
@@ -17,7 +24,8 @@ li{
 div.central{
     display: flex;
     justify-content: center;
-    text-align: center;
+    align-content:central;
+    
 }
 
 div.menu-bar{
@@ -45,7 +53,7 @@ p.amount{
     color: brown;
 }
 
-button.buy-button{
+button.button{
     position: absolute;
     top: 65%;
     padding: 7px 12px;
@@ -55,7 +63,7 @@ button.buy-button{
     background-color: hwb(191 21% 47%);
 }
 
-button.buy-button:hover{
+.button:hover{
     cursor: pointer;
     background-color: rgb(46, 62, 118);
 }
@@ -65,4 +73,35 @@ p.desc{
     top: 70%;
     font-size: 15px;
     color: brown;
+}
+
+div.card-new{
+    position: absolute;
+    top: 35%;
+    z-index: 101;
+    transition: 1s;
+}
+
+.card-new.hidden{
+    top: -100%;
+}
+
+/*stile carta invertito per il negozio*/
+div.card-rev-front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: var(--sapienza);
+    color: #000000;
+}
+
+div.card-rev-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    backface-visibility: hidden;
+    background-color:darkgrey ;
+    transform: rotateY(180deg);
 }

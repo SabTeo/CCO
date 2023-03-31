@@ -23,7 +23,6 @@ div.banner{
     z-index: 100;
     pointer-events: all;
     transition: 0.50s ease-out
-
 }
 
 .banner.banner1{
