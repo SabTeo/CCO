@@ -1,0 +1,6 @@
+Table Users(
+    email varchar(40), 
+    nome varchar(40),
+    paswd varchar(255) not null,
+    primary key (email)
+);
