@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+ <defs>
+  <linearGradient id="svg_6" spreadMethod="pad" x1="0" x2="1" y1="0" y2="0">
+   <stop id="jq_stop_4620" offset="0" stop-color="#ffc315" stop-opacity="1"/>
+   <stop id="jq_stop_3507" offset="0.01" stop-color="#ffa616" stop-opacity="0.99"/>
+   <stop id="jq_stop_815" offset="0.54" stop-color="#ffdc16" stop-opacity="0.99"/>
+  </linearGradient>
+  <linearGradient id="svg_16">
+   <stop id="jq_stop_976" offset="0" stop-color="#000fbc"/>
+   <stop id="jq_stop_6255" offset="0.98" stop-color="#325fff" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="svg_22" x1="0" x2="1" y1="0" y2="0">
+   <stop id="jq_stop_7463" offset="0" stop-color="#2b870d" stop-opacity="0.98"/>
+   <stop id="jq_stop_5513" offset="1" stop-color="#06cc06" stop-opacity="1"/>
+  </linearGradient>
+ </defs>
+ <g class="layer">
+  <title>Layer 1</title>
+  <rect fill="url(#svg_16)" height="139" id="svg_14" rx="8" ry="8" stroke="#3d3d3d" transform="matrix(0.992278 0.124034 -0.124034 0.992278 27.4522 -48.5452)" width="93" x="329.97" y="151.76"/>
+  <rect fill="url(#svg_6)" height="139" id="svg_1" rx="8" ry="8" stroke="#3d3d3d" transform="matrix(1 0 0 1 0 0)" width="93" x="269" y="142.4"/>
+  <rect fill="url(#svg_22)" height="139" id="svg_18" rx="8" ry="8" stroke="#3d3d3d" transform="matrix(0.991838 -0.127508 0.127508 0.991838 -23.1862 36.0928)" width="93" x="207.82" y="148.04"/>
+ </g>
+</svg>

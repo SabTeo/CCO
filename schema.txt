@@ -1,3 +1,6 @@
+Usr: ltw, Db: ccodb, pw:snap
+
+
 Table Users(
     email varchar(40), 
     nome varchar(40),
