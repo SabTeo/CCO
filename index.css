@@ -1,0 +1,45 @@
+div.col{
+    display: block;
+    justify-content: center;
+    text-align: center;
+}
+
+img.logo{
+    margin-top: 12%;
+}
+
+@media screen and (max-width: 599px) {
+    img.logo {
+      margin-top: 40px;
+    }
+  }
+
+@media screen and (max-height: 399px) {
+    img.logo {
+      margin-top: 10px;
+    }
+  }
+
+.celem{
+    margin: 15px;
+    text-align: center;
+}
+
+@media screen and (max-height: 299px) {
+    .celem {
+      margin: 2px;
+    }
+  }
+
+.gradientbutton{
+    background: #46aa17;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #048b2a, #59cc23);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #048b2a, #59cc23); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border: 3px solid #ffffff !important;
+}
+
+.gradientbutton:hover{
+    background: -webkit-linear-gradient(to right, #03661f, #49a91d);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #03661f, #49a91d);
+}

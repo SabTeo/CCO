@@ -1,6 +1,22 @@
 :root{
     --sapienza: #822434;
 }
+
+@font-face {
+    font-family: 'Title';
+    src: 'Assets/DragonHunter-9Ynxj.otf';
+}
+
+.title{
+    font-family: 'Title';
+}
+
+div.central{
+    display: flex;
+    justify-content: center;
+    align-content:central;
+}
+
 div.card-container{
     position: relative;
     width: 250px;
