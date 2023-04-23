@@ -1,9 +1,16 @@
 Usr: ltw, Db: ccodb, pw:snap
 
+Modifiche:
+
+ALTER TABLE users ADD COLUMN valuta int DEFAULT 400;
+ALTER TABLE users ALTER COLUMN nome TYPE varchar(16);
 
 Table Users(
     email varchar(40), 
-    nome varchar(40),
+    nome varchar(16),
     paswd varchar(255) not null,
+    valuta int default 400,
     primary key (email)
 );
+
+

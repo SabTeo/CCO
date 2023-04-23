@@ -3,9 +3,10 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     header("Location: /");
 }
 else {
-    $dbconn = pg_connect("host=localhost port=5432 dbname=ccodb 
-                user=ltw password=snap") 
-                or die('Could not connect: ' . pg_last_error());
+    $dbconn = pg_connect("host=localhost
+                            port=5432 dbname=ccodb 
+                            user=ltw password=snap") 
+    or die('Could not connect: ' . pg_last_error());
 }
 ?>
 <!DOCTYPE html>

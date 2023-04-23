@@ -38,25 +38,30 @@
     </div>
     <div class="central">
       <img class="crystal" src="Assets/crystal.png">
-      <p class="amount">0/100</p>
       <button class="button" onclick="buyAnim()" id="buy-button">Acquista</button>
       <p class="desc">Ogni pacchetto contiene una carta casuale non posseduta</p>
       <button class="button invisible" onclick="window.location.reload()" id="end-button" 
-        style="top:75%; z-index:102; transition:1s;" 
-        >OK</button>
-      <!-- le righe seguenti devono essere modificate dal server-->
+        style="top:75%; z-index:102; transition:1s;">OK</button>
+      <!--mostra cristalli posseduti da user memorizzato in sessione-->
+      <?php require_once 'dbConnection.php';
+        $username = 'mat'; //ATTENZIONE il nome va preso da $session
+        $connection = dbconnect();
+        $val = getValuta($connection, $username);
+        echo"<p class=\"amount\">$val/100</p>";
+      ?>
+      <!--chiamata ajax per la nuova carta-->
       <div class="card-container" id="card-container">
         <div class="card card-new hidden" id="card-new">    
           <div class="card-rev-front">
             <img src="Assets/sapienza.jpg" 
-               class="back-image"
-               alt="sapienza logo">
-            </div>
-            <div class="card-rev-back">Stasera lol?</div>
+              class="back-image"
+              alt="sapienza logo">
+          </div>
+          <div class="card-rev-back">Stasera lol?</div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </body>
 
