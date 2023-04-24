@@ -1,10 +1,3 @@
-/*Bottone Ok definito in store.html*/
-
-body{
-    margin: 0px;
-    background-image: url("Assets/star_Bg.png");
-}
-
 .invisible{
     opacity: 0%;
     pointer-events: none;
@@ -99,4 +92,9 @@ div.card-rev-back{
     backface-visibility: hidden;
     background-color:darkgrey ;
     transform: rotateY(180deg);
+}
+
+div.cbox{
+    display: block;
+    text-align: center;
 }

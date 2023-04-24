@@ -8,10 +8,11 @@
   <link rel="apple-touch-icon" sizes="180x180" href="Icon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="Icon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="Icon/favicon-16x16.png">
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="store.css">
-  <link rel="stylesheet" href="storeAnimation.css">
-  <script src="storeAnimation.js"></script>
+  <link rel="stylesheet" href="CSS/main.css">
+  <link rel="stylesheet" href="CSS/store.css">
+  <link rel="stylesheet" href="CSS/storeAnimation.css">
+  <script src="JS/jquery-min.js"></script>
+  <script src="JS/giftSystem.js"></script>
   
 </head>
 
@@ -43,13 +44,13 @@
       <button class="button invisible" onclick="window.location.reload()" id="end-button" 
         style="top:75%; z-index:102; transition:1s;">OK</button>
       <!--mostra cristalli posseduti da user memorizzato in sessione-->
-      <?php require_once 'dbConnection.php';
-        $username = 'mat'; //ATTENZIONE il nome va preso da $session
-        $connection = dbconnect();
-        $val = getValuta($connection, $username);
-        echo"<p class=\"amount\">$val/100</p>";
-      ?>
-      <!--chiamata ajax per la nuova carta-->
+        <?php require_once 'PHP/dbConnection.php';
+          $username = 'mat'; //ATTENZIONE il nome va preso da $session
+          $connection = dbconnect();
+          $val = getValuta($connection, $username);
+          echo"<p class=\"amount\">$val/100</p>";
+        ?>
+      <!--chiamata ajax per la nuova carta e uggiornamento db-->
       <div class="card-container" id="card-container">
         <div class="card card-new hidden" id="card-new">    
           <div class="card-rev-front">
@@ -64,5 +65,5 @@
     </div>
   </div>
 </body>
-
+<script src="JS/storeFunctions.js"></script>
 </html>
