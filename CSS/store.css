@@ -1,28 +1,39 @@
+@media screen and (max-width: 369px) {
+    div.menu-bar{
+        flex-direction: column !important;
+        
+    }
+    div.menu-item{
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 0% !important;
+    }
+    div.top-item{
+        order: -1;
+    }
+    h2{
+        height: 10px;
+    }
+    h3{
+        height: 10px;
+    }
+}
+
+/*
+.menu-item:first-child{background-color: rgb(30, 210, 156);}
+menu-item:last-child{background-color: chocolate;}
+*/
+
+.menu-item:first-child > #arrowBack{margin-left: 15px;}
+.menu-item:first-child > span{margin-right: auto; margin-left: 5px;}
+.menu-item:last-child{justify-content: right;}
+.menu-item:last-child > span{margin-right: 25px; margin-left: 0px;}
+.menu-item:last-child > #giftIcon{margin-right: 7px;}
+
+
 .invisible{
     opacity: 0%;
     pointer-events: none;
-}
-
-ul{
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-}
-
-li{
-    display: inline-block;
-    padding-left: 15px;
-}
-
-
-div.menu-bar{
-    position: absolute;
-    width: 100%;
-    padding: 0px;
-    text-align: center;
-    background-color: rgb(23, 23, 81);
-    color: antiquewhite;
-    z-index: 99;
 }
 
 img.crystal{
@@ -33,11 +44,19 @@ img.crystal{
     opacity: 95%;
 }
 
-p.amount{
+div.amountContainer{
     position: absolute;
     top: 53%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+p.amount{
     font-size: 25px;
+    color: rgb(121, 49, 49);
     color: brown;
+    
 }
 
 button.button{
@@ -63,38 +82,24 @@ p.desc{
     color: brown;
 }
 
-div.card-new{
+div.card{
     position: absolute;
     top: 45%;
     z-index: 101;
     transition: 1s;
 }
 
-.card-new.hidden{
+.card.hidden{
     top: -100%;
 }
 
-/*stile carta invertito per il negozio*/
-div.card-rev-front{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    background-color: var(--sapienza);
-    color: #000000;
+.btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
 }
 
-div.card-rev-back{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    backface-visibility: hidden;
-    background-color:darkgrey ;
-    transform: rotateY(180deg);
-}
-
-div.cbox{
-    display: block;
-    text-align: center;
+.btn:hover{
+    background-color: rgb(46, 62, 118);
 }

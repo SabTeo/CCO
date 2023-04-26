@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="CSS/storeAnimation.css">
   <script src="JS/jquery-min.js"></script>
   <script src="JS/giftSystem.js"></script>
+  <script defer src="JS/storeFunctions.js"></script>
   
 </head>
 
@@ -26,44 +27,71 @@
     <div class="horizontal-banner" id="horizontal"></div>
 
     <div class="menu-bar">
-      <div class="central">
-        <ul>
-          <li>
-            <h3>Collezione</h3>
-          </li>
-          <li>
-            <h3>Negozio</h3>
-          </li>
-        </ul>
+      <div class="menu-item">
+        <object id="arrowBack" data="Assets/arrow_back.svg" height="30px" width="30"> </object>
+        <span>
+          <h3>Collezione</h3>
+        </span>
+      </div>
+      <div class="menu-item top-item">
+        <span>
+          <h2>Negozio</h2>
+        </span>
+      </div>
+      <div class="menu-item">
+        <object id="giftIcon" data="Assets/gift.svg" height="22px" width="22"> </object>
+        <span>
+          <?php require_once 'PHP/dbConnection.php'; require_once 'PHP/giftSystem.php';
+            $a = giftAvailable();
+            //si
+            if($a>=22){
+              $username = 'mat'; //ATTENZIONE il nome va preso da $session
+              $connection = dbconnect();
+              $c = giftClaimed($connection, $username);
+              if(!$c) echo "<p>ecco il tuo regalo!</p>";
+              else{
+                goto end;
+              }
+            }
+            //no
+            else{
+              end:
+              echo "<p class=\"giftNotice\">disponibile tra: $a ore!</p>";
+            }
+          ?>
+        </span>
       </div>
     </div>
+
     <div class="central">
       <img class="crystal" src="Assets/crystal.png">
       <button class="button" onclick="buyAnim()" id="buy-button">Acquista</button>
       <p class="desc">Ogni pacchetto contiene una carta casuale non posseduta</p>
-      <button class="button invisible" onclick="window.location.reload()" id="end-button" 
-        style="top:75%; z-index:102; transition:1s;">OK</button>
-      <!--mostra cristalli posseduti da user memorizzato in sessione-->
+      <button class="button invisible" id="end-button" 
+              style="top:75%; z-index:102; transition:1s;">OK</button>
+      <div class="amountContainer">
+        <!--mostra cristalli posseduti da user memorizzato in sessione-->
         <?php require_once 'PHP/dbConnection.php';
           $username = 'mat'; //ATTENZIONE il nome va preso da $session
           $connection = dbconnect();
           $val = getValuta($connection, $username);
-          echo"<p class=\"amount\">$val/100</p>";
+          echo"<p class=\"amount\" id=\"amountAv\">$val</p>";
         ?>
-      <!--chiamata ajax per la nuova carta e uggiornamento db-->
+        <p class="amount">/100</p>
+      </div>
+      <!--chiamata ajax per la nuova carta e aggiornamento db-->
       <div class="card-container" id="card-container">
-        <div class="card card-new hidden" id="card-new">    
-          <div class="card-rev-front">
+        <div class="card flipped hidden" id="card-new">
+        <div class="card-front">Stasera lol?</div>
+          <div class="card-back">
             <img src="Assets/sapienza.jpg" 
               class="back-image"
               alt="sapienza logo">
           </div>
-          <div class="card-rev-back">Stasera lol?</div>
         </div>
       </div>
 
     </div>
   </div>
 </body>
-<script src="JS/storeFunctions.js"></script>
 </html>

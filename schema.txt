@@ -2,14 +2,17 @@ Usr: ltw, Db: ccodb, pw:snap
 
 Modifiche:
 
-ALTER TABLE users ADD COLUMN valuta int DEFAULT 400;
+ALTER TABLE users ADD COLUMN valuta int DEFAULT 200;
 ALTER TABLE users ALTER COLUMN nome TYPE varchar(16);
+ALTER TABLE users ADD COLUMN lastgift date;
 
 Table Users(
     email varchar(40), 
     nome varchar(16),
     paswd varchar(255) not null,
-    valuta int default 400,
+    valuta int default 200,
+    lastgift date,
+    
     primary key (email)
 );
 
