@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="CSS/main.css">
   <link rel="stylesheet" href="CSS/store.css">
   <link rel="stylesheet" href="CSS/storeAnimation.css">
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
   <script src="JS/jquery-min.js"></script>
   <script src="JS/giftSystem.js"></script>
   <script defer src="JS/storeFunctions.js"></script>
@@ -28,27 +30,25 @@
 
     <div class="menu-bar">
       <div class="menu-item">
-        <object id="arrowBack" data="Assets/arrow_back.svg" height="30px" width="30"> </object>
-        <span>
+        <div class="btn">
+          <img id="arrowBack" src="Assets/arrow_back.svg" height="30px" width="30"> </img>
           <h3>Collezione</h3>
-        </span>
+        </div>
       </div>
       <div class="menu-item top-item">
-        <span>
-          <h2>Negozio</h2>
-        </span>
+        <h2>Negozio</h2>
       </div>
       <div class="menu-item">
-        <object id="giftIcon" data="Assets/gift.svg" height="22px" width="22"> </object>
-        <span>
+        <div class="hov">
+          <img id="giftIcon" src="Assets/gift.svg" height="20px" width="20"> </object>
           <?php require_once 'PHP/dbConnection.php'; require_once 'PHP/giftSystem.php';
             $a = giftAvailable();
             //si
             if($a>=22){
-              $username = 'mat'; //ATTENZIONE il nome va preso da $session
+              $username = 'rob'; //ATTENZIONE il nome va preso da $session
               $connection = dbconnect();
               $c = giftClaimed($connection, $username);
-              if(!$c) echo "<p>ecco il tuo regalo!</p>";
+              if(!$c) echo "<p>ecco il tuo regalo!$c</p>";
               else{
                 goto end;
               }
@@ -59,7 +59,7 @@
               echo "<p class=\"giftNotice\">disponibile tra: $a ore!</p>";
             }
           ?>
-        </span>
+        </div>
       </div>
     </div>
 

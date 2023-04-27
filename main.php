@@ -1,3 +1,7 @@
+<?php session_start(); //dichiara variabile $_SESSION per questa pagina (inizializzata al login!)
+    //isUserLogged();
+    //if not redirect to login
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,10 +15,21 @@
     <script src="JS/storeFunctions.js"></script>
   </head>
   <body>
+  <?php
+    if(!isset($_SESSION['username'])) {
+      // anomalo, di chi sono le carte che devo caricare?
+      goto end;
+    }
+    else{
+      $currentUser = $_SESSION['username'];
+      echo"<h1>$currentUser</h1>";
+    }
+    end: ;
+  ?> 
     <div class="central">
     <div class="card-container">
-      <div class="card flipped" id="card">
-        <div class="card-front"></div>
+      <div class="card" id="card">
+        <div class="card-front">fronte della carta</div>
         <div class="card-back">
           <img src="Assets/sapienza.jpg" 
             class="back-image"

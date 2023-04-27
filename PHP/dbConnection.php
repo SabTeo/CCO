@@ -30,6 +30,9 @@
         }
         //data  diversa da quella odierna
         else if($tuple['lastgift']!=date('Y-m-d')){
+            $d = date('Y-m-d');
+            $v = getValuta($connection, $username) + 100;
+            pg_update($connection, 'users', array('lastgift'=>$d, 'valuta'=>$v), array('nome'=>$username));
             return false;
         }
         return true;

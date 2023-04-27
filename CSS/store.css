@@ -19,17 +19,30 @@
     }
 }
 
-/*
-.menu-item:first-child{background-color: rgb(30, 210, 156);}
-menu-item:last-child{background-color: chocolate;}
-*/
+.menu-item:first-child{
+    justify-content: left;
+    padding-left: 0px;
+}
+.menu-item:first-child > .btn > h3{
+    margin-left: 5px;
+    margin-right: 15px;
+}
+#arrowBack{
+    margin-left: 15px;
+}
 
-.menu-item:first-child > #arrowBack{margin-left: 15px;}
-.menu-item:first-child > span{margin-right: auto; margin-left: 5px;}
-.menu-item:last-child{justify-content: right;}
-.menu-item:last-child > span{margin-right: 25px; margin-left: 0px;}
-.menu-item:last-child > #giftIcon{margin-right: 7px;}
-
+.menu-item:last-child{
+    justify-content: right;
+    padding-right: 0px;
+}
+.menu-item:last-child{
+    justify-content: right;
+    margin-right: 30px;
+    margin-left: 0px;
+}
+.menu-item:last-child > .hov > p{
+    padding-left: 7px;
+}
 
 .invisible{
     opacity: 0%;
@@ -93,13 +106,32 @@ div.card{
     top: -100%;
 }
 
-.btn{
+div.btn{
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: left;
+    border-radius: 3px;
 }
 
 .btn:hover{
     background-color: rgb(46, 62, 118);
+    cursor: pointer;
+}
+
+div.hov{
+    display: flex;
+    align-items: center;
+}
+
+.hov:hover{
+    cursor: pointer;
+}
+
+.tippy-box[data-theme~='custom'] {
+    background-color: antiquewhite;
+    color: rgb(0, 0, 0);
+    font-family:sans-serif;
+}
+
+h2{
+    margin:auto;
 }

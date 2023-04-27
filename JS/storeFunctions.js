@@ -57,6 +57,11 @@ function colorAmount(){
 
 function update(){
     colorAmount();
+    tippy('.hov',{
+        theme:'custom',
+        arrow:'',
+        content:"Visita il negozio ogni giorno tra le 15 e le 18 per ricevere il tuo bonus giornaliero di 100 cristalli"
+    });
 }
 
 $( window ).on( "load",update());
