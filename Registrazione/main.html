@@ -10,16 +10,19 @@
         <script src="../bootstrap/js/bootstrap.min.js"></script>
         <script src="../JS/formValidation.js"></script>
     </head>
-    <body class="text-center">
-        <form action="registrazione.php" class="form-signin m-auto" 
+    <body class="">
+        <form action="registrazione.php" class="" 
                 method="POST" name="myForm" onSubmit="return validaForm()">
             <h1 class="mb-3 font-weight-normal">Registrati, é gratis xd!</h1>
-            <input type="email" name="inputEmail" class="form-control"
-                placeholder="Indirizzo e-mail" required autofocus/>
+            <input type="email" name="inputEmail" class=""
+                placeholder="Indirizzo e-mail" autofocus/>
             <input type="text" name="inputName" class="form-control"
                 placeholder="Nome Utente" required/>
-            <input type="password" name="inputPassword" class="form-control" 
+            <input type="password" title="" name="inputPassword" class="form-control" 
                 placeholder="Password" required/>
+            <div class="invalid-message">
+                 errore           
+            </div>
             <div id="divRemember" class="checkbox mb-3">
                 <input id="rmb" type="checkbox" name="remember"/>
                 <label for="rmb">Ricordami</label>

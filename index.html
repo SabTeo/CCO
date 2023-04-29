@@ -10,28 +10,32 @@
         <link rel="stylesheet" href="CSS/main.css"/>
         <link rel="stylesheet" href="CSS/index.css"/>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
-        <script type="application/javascript" src="./bootstrap/js/bootstrap.min.js">
-        </script>                                                                                                                                                                       
+        <script src="JS/jquery-min.js"></script>   
+        <script defer src="JS/login.js"></script>                                                                                                                                                                   
     </head>
     <body>
         <div class="mainContainer">
             <div class="box">
                 <img class="logo" src="Assets/cards.svg" width="130" height="90">
                 <h1 class="title"><b>Carte Collezionabili Online</b></h1>
-                <form name="myForm" action="PHP/login.php" method="POST"
-                        class="form-signin" onsubmit="alertRmb()">
-                    <input type="email" placeholder="Indirizzo e-mail" name="inputEmail"
-                        class="form-control" required autofocus>
+                <div class="invalid-message"></div>
+                <form name="myForm" id="form" action="PHP/login.php" onsubmit="return login()" method="POST"
+                        class="form-signin needs-validation">
+                    <input type="text" placeholder="Username" name="Username"
+                        class="form-control" title="" id="userfield"
+                        required autofocus>
                     <input type="password" placeholder="Password" name="inputPassword"
-                        class="form-control" required>
+                        class="form-control" title="" id="passwordfield"
+                        required>
                     <div id="divRemember" class="checkbox">
-                        <input type="checkbox" name="remember" id="rmb">
+                        <input type="checkbox" class="form-check-input" name="remember" id="rmb">
                         <label for="rmb" id="rmbLabel">Ricordami</label>
                     </div>
                     <button class="btn btn-primary btn-lg gradientbutton" type="submit">Login</button>
                 </form>
                 <a class="celem" href="Registrazione/main.html">Crea un account</a>
             </div>
+
         </div>
     </body>
 </html>

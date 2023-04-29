@@ -63,3 +63,10 @@ button.gradientbutton:hover{
   background: -webkit-linear-gradient(to right, #03661f, #49a91d);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #03661f, #49a91d);
 }
+
+.invalid-message{
+  text-align: center;
+  color: red;
+  opacity: 80%;
+  font-size: 15px;
+}

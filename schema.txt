@@ -2,9 +2,10 @@ Usr: ltw, Db: ccodb, pw:snap
 
 Modifiche:
 
-ALTER TABLE users ADD COLUMN valuta int DEFAULT 200;
-ALTER TABLE users ALTER COLUMN nome TYPE varchar(16);
-ALTER TABLE users ADD COLUMN lastgift date;
+ALTER TABLE users DROP CONSTRAINT users_pkey;
+ALTER TABLE users ADD PRIMARY KEY (nome);
+ALTER TABLE users ADD UNIQUE (email);
+
 
 Table Users(
     email varchar(40), 
@@ -13,7 +14,8 @@ Table Users(
     valuta int default 200,
     lastgift date,
     
-    primary key (email)
-);
+    primary_key(nome)
+    key(email)
+)
 
 
