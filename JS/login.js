@@ -19,9 +19,13 @@ function login(){
     $('#passwordfield').css('border-color', '');
     request = new XMLHttpRequest();
     request.onreadystatechange = resHandler;
-    request.open("POST", "/PHP/loginver.php", true);
+    request.open("POST", "/PHP/loginAj.php", true);
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    request.send("Username="+$("#userfield").val()+"&inputPassword="+$("#passwordfield").val()+"&remember="+$('#rmb').is(":checked"));
+    body = "Username="+$("#userfield").val()+"&inputPassword="+$("#passwordfield").val();
+    if($('#rmb').is(":checked")){
+        body = body +"&remember=true";
+    }
+    request.send(body);
 }
 
 function init(){
@@ -30,7 +34,7 @@ function init(){
     //later you decide you want to submit
     //$(this).unbind('submit').submit()
     });
-    ('.invalid-message').html('');
+    $('.invalid-message').html('');
     $('#userfield').css('border-color', '');
     $('#passwordfield').css('border-color', '');
 }

@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="CSS/main.css">
     <link rel="stylesheet" href="CSS/store.css">
     <script src="JS/jquery-min.js"></script>
-    <script src="JS/storeFunctions.js"></script>
   </head>
   <body>
   <?php

@@ -44,7 +44,7 @@
             $a = giftAvailable();
             //si
             if($a>=22){
-              $username = 'rob'; //ATTENZIONE il nome va preso da $session
+              $username = 'mat'; //ATTENZIONE il nome va preso da $session
               $connection = dbconnect();
               $c = giftClaimed($connection, $username);
               if(!$c) echo "<p>ecco il tuo regalo!$c</p>";
