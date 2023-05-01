@@ -39,35 +39,5 @@
             break;
         }
         return;
-                /*
-                if (!($tuple=pg_fetch_array($result, null, PGSQL_ASSOC))) {
-                    echo "INVALID_NAME";
-                    return;
-                }
-                else {
-                    $password = $_POST['inputPassword'];
-                    $q2 = "select * from users where nome = $1 and paswd = $2";
-                    $result = pg_query_params($dbconn, $q2, array($user, $password));
-                    if (!($tuple=pg_fetch_array($result, null, PGSQL_ASSOC))) {
-                        echo "INVALID_PASSWORD";
-                        return;
-                    }
-                    else {
-                        session_start();
-                        $_SESSION['username']=$user;
-                        $remember=$_POST['remember'];
-                        //ricordami
-                        if(array_key_exists('remember', $_POST)){
-                                setcookie('user', $user, time()+3600*24*7, "/");
-                                setcookie('password',$password, time()+3600*24*7, "/");
-                                echo "LOGIN_SUCCESSFUL";
-                                return;
-                        }
-                    }
-                        /*else {
-                            setcookie('user',$user,3);
-                            setcookie('password',$password,3);
-                        }*/
-                        //header("Location:../main.php");
     }
 ?>

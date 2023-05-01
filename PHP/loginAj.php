@@ -25,7 +25,7 @@
             else {
                 session_start();
                 $_SESSION['username']=$user;
-                $remember=$_POST['remember'];
+                //$remember=$_POST['remember'];
                 //ricordami
                 if(array_key_exists('remember', $_POST)){
                         setcookie('user', $user, time()+3600*24*7, "/");

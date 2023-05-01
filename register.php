@@ -33,12 +33,6 @@
                         class="form-control" title="" id="passwordfield"
                         onchange="return isPassValid()" onfocusout="return isPassValid()" required>
                     <div class="invalid-message" id="invPass"></div>
-                    <!--
-                    <div id="divRemember" class="checkbox">
-                        <input type="checkbox" class="form-check-input" name="remember" id="rmb">
-                        <label for="rmb" id="rmbLabel">Ricordami</label>
-                    </div>
-                    -->
                     <button class="btn btn-primary btn-lg gradientbutton" type="submit">Registrati</button>
                 </form>
                 <div class="bottom">

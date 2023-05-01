@@ -1,34 +1,3 @@
-//handler per TUTTE le rispote ajax
-function resHandler(e){
-    res = e.target.responseText;
-    switch(res){
-        case('FREE_U'):
-            $('#invUser').html('');
-            $('#userfield').css('border-color', 'forestgreen');
-        break;
-        case('TAKEN_U'):
-            $('#invUser').html('Esiste già un utente con questo nome');
-            $('#userfield').css('border-color', 'red');
-        break;
-        case('FREE_E'):
-            $('#invMail').html('');
-            $('#mailfield').css('border-color', 'forestgreen');
-        break;
-        case('TAKEN_E'):
-            $('#invMail').html('Esiste già un utente con questa email');
-            $('#mailfield').css('border-color', 'red');
-        break;
-        case('SUCCESS'):
-            alert('Registrazione effettuata con successo');
-            window.location.href = 'index.php';
-        break;
-        case('ERROR'):
-            alert('Errore interno');
-            window.location.reload();
-        break;
-    }
-}
-
 //FUNZIONI DI VALDAZIONE
 
 //manda chiamata ajax per verificare username o email (field) gia presenti
@@ -44,21 +13,6 @@ function verifyTaken(field, value){
         else if(field=='mail')body = 'type=VER_E' + '&mail=' + value;
         request.send(body);
         });
-    request = new XMLHttpRequest();
-    request.onreadystatechange = resHandler;
-    request.open('POST', '/PHP/registerAj.php', true);
-    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    if(field=='username'){
-        body = 'type=VER_U' + '&username=' + value;
-        request.send(body);
-        return true;
-    }
-    else if(field=='email'){
-        body = 'type=VER_E' + '&mail=' + value;
-        request.send(body);
-        return true;
-    }
-    return false;
 }
 
 async function isUserValid(){
@@ -104,7 +58,7 @@ async function isMailValid(){
         $('#mailfield').css('border-color', 'red');
         return false;
     }
-    if(value.length>40){
+    if(value.length>64){
         $('#invMail').html('L\'email inserita è più lunga di 64 caratteri');
         $('#mailfield').css('border-color', 'red');
         return false;
@@ -161,6 +115,20 @@ function isPassValid(){
     $('#invPass').html('');
     $('#passwordfield').css('border-color', 'forestgreen');
     return true;
+}
+
+function resHandler(e){
+    res = e.target.responseText;
+    switch(res){
+        case('SUCCESS'):
+            alert('Registrazione effettuata con successo');
+            window.location.href = 'index.php';
+        break;
+        case('ERROR'):
+            alert('Errore interno');
+            window.location.reload();
+        break;
+    }
 }
 
 async function register(){

@@ -30,7 +30,7 @@
                 <img class="logo" src="Assets/cards.svg" width="130" height="90">
                 <h1 class="title"><b>Carte Collezionabili Online</b></h1>
                 <div class="invalid-message"></div>
-                <form name="myForm" id="form" action="PHP/login.php" onsubmit="return login()" method="POST"
+                <form name="myForm" id="form" action="" onsubmit="return login()" method="POST"
                         class="form-signin needs-validation">
                     <input type="text" placeholder="Username" name="Username"
                         class="form-control" title="" id="userfield"
