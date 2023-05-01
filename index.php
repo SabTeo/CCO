@@ -44,7 +44,7 @@
                     </div>
                     <button class="btn btn-primary btn-lg gradientbutton" type="submit">Login</button>
                 </form>
-                <a class="celem" href="Registrazione/main.html">Crea un account</a>
+                <a class="celem" href="register.php">Crea un account</a>
             </div>
 
         </div>

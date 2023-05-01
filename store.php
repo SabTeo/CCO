@@ -44,7 +44,7 @@
             $a = giftAvailable();
             //si
             if($a>=22){
-              $username = 'mat'; //ATTENZIONE il nome va preso da $session
+              $username = 'rob'; //ATTENZIONE il nome va preso da $session
               $connection = dbconnect();
               $c = giftClaimed($connection, $username);
               if(!$c) echo "<p>ecco il tuo regalo!$c</p>";
@@ -55,7 +55,12 @@
             //no
             else{
               end:
-              echo "<p class=\"giftNotice\">disponibile tra: $a ore!</p>";
+              if($a!=1){
+                echo "<p class=\"giftNotice\">disponibile tra: $a ore!</p>";
+                return;
+              }
+              echo "<p class=\"giftNotice\">disponibile tra: $a ora!</p>";
+              return;
             }
           ?>
         </div>
@@ -71,7 +76,7 @@
       <div class="amountContainer">
         <!--mostra cristalli posseduti da user memorizzato in sessione-->
         <?php require_once 'PHP/dbConnection.php';
-          $username = 'mat'; //ATTENZIONE il nome va preso da $session
+          $username = 'rob'; //ATTENZIONE il nome va preso da $session
           $connection = dbconnect();
           $val = getValuta($connection, $username);
           echo"<p class=\"amount\" id=\"amountAv\">$val</p>";

@@ -21,7 +21,7 @@ function login(){
     request.onreadystatechange = resHandler;
     request.open("POST", "/PHP/loginAj.php", true);
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    body = "Username="+$("#userfield").val()+"&inputPassword="+$("#passwordfield").val();
+    body = "username="+$("#userfield").val()+"&inputPassword="+$("#passwordfield").val();
     if($('#rmb').is(":checked")){
         body = body +"&remember=true";
     }
@@ -31,7 +31,7 @@ function login(){
 function init(){
     $('#form').submit(function(e){
     e.preventDefault();
-    //later you decide you want to submit
+    //per riabilitare il submit
     //$(this).unbind('submit').submit()
     });
     $('.invalid-message').html('');

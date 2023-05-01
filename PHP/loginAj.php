@@ -1,4 +1,4 @@
-<?php require_once '../PHP/dbConnection.php';
+<?php require_once 'dbConnection.php';
     if ($_SERVER["REQUEST_METHOD"] != "POST") {
         echo"noPOST";
         header("Location: /");
@@ -7,7 +7,7 @@
         $dbconn =  dbconnect();
     }
     if ($dbconn) {
-        $user = $_POST['Username'];
+        $user = $_POST['username'];
         $q1 = "select * from users where nome= $1";
         $result = pg_query_params($dbconn, $q1, array($user));
         if (!($tuple=pg_fetch_array($result, null, PGSQL_ASSOC))) {
