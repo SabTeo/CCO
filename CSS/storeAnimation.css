@@ -50,9 +50,9 @@ div.banner{
 
 div.horizontal-banner{
     position: fixed;
-    top: 45%;
+    top: 40%;
     left: -102%;
-    height: 10%;
+    height: 8%;
     width: 100%;
     padding: 1px;
     background: #7f077bfe;
@@ -66,8 +66,8 @@ div.horizontal-banner{
 }
 
 .horizontal-banner.p2{
-    top: 40%;
-    height: 20%;
+    top: 36%;
+    height: 17%;
     transition: 0.50s ease-in;
 }
 
@@ -80,7 +80,7 @@ div.anim{
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: start;
     align-items: center;
     pointer-events: none;
     z-index: 4;
@@ -93,4 +93,19 @@ div.anim{
     div.horizontal-banner.p2{
         top: 30%;
     }
+}
+
+div.anibox{
+    position: absolute;
+    top: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: 1s;
+    pointer-events: all;
+}
+
+div.anihidden{
+    top: -150%;
 }

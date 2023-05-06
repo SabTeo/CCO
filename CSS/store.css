@@ -115,14 +115,8 @@ p.desc{
 }
 
 div.new-card-container{
-    position: absolute;
-    transition: 1s;
-    top: 20vh;
-    pointer-events: all;
-}
-
-div.new-cont-hidden{
-    top: -150% !important;
+    margin-top: 15vh;
+    position: relative;
 }
 
 div.btn{
@@ -158,11 +152,11 @@ h2{
     margin:auto;
 }
 
+
 #end-button{
-    margin-bottom: 10vh;
+    margin-top: 5vh;
     z-index: 6; 
     transition: 1s;
-    pointer-events: all;
 }
 
 @media screen and (max-width: 749px){
@@ -197,23 +191,14 @@ h2{
     }
 }
 
-@media screen and (max-width: 329px), screen and (max-height: 474px){
-    h2{
+@media screen and (max-width: 329px), screen and (max-height: 549px){
+    /*h2{
         font-size: 22px;
-    }
+    }*/
     div.card-container{
         width: 188px;
         height: 240px;
-        top: 10%;
-    }
-    #end-button{
-        margin-bottom: 30vh;
-    }
-}
-
-@media screen and (max-height: 539px){
-    #end-button{
-        margin-bottom: 10px;
+        margin-top: 10vh;
     }
 }
 

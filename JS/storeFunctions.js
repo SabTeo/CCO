@@ -23,7 +23,7 @@ function buyAnim(){
         document.getElementById("horizontal").classList.add("p2")
     }, 1100);
     setTimeout(()=>{
-        document.getElementById("new-card-cont").classList.remove("new-cont-hidden")
+        document.getElementById("anibox").classList.remove("anihidden")
     }, 1400);
     setTimeout(()=>{
         document.getElementById("end-button").addEventListener("click", ()=>{

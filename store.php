@@ -82,7 +82,10 @@
     </div>
       <!--chiamata ajax per la nuova carta e aggiornamento db-->
       <div class="anim">
-        <div class="card-container new-card-container new-cont-hidden" id="new-card-cont">
+
+        <div class="anibox anihidden" id="anibox">
+
+        <div class="card-container new-card-container" id="new-card-cont">
           <div class="card flipped" id="card-new">
           <div class="card-front">Stasera lol?</div>
             <div class="card-back">
@@ -91,9 +94,12 @@
                 alt="sapienza logo">
             </div>
           </div>
-        </div>
+        </div>   
         <button class="button invisible" id="end-button" 
                 style="top:75%; z-index:102; transition:1s;">OK</button>
+
+        </div>
+
       </div>
 
 
