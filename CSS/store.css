@@ -1,4 +1,4 @@
-@media screen and (max-width: 369px) {
+/*@media screen and (max-width: 369px) {
     div.menu-bar{
         flex-direction: column !important;
         
@@ -17,6 +17,15 @@
     h3{
         height: 10px;
     }
+}
+*/
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+div.menu-bar{
+    height: 70px;
 }
 
 .menu-item:first-child{
@@ -37,7 +46,7 @@
 }
 .menu-item:last-child{
     justify-content: right;
-    margin-right: 30px;
+    margin-right: 2vw;
     margin-left: 0px;
 }
 .menu-item:last-child > .hov > p{
@@ -46,26 +55,30 @@
 
 .invisible{
     opacity: 0%;
-    pointer-events: none;
+    pointer-events: none !important;
 }
 
 img.crystal{
-    position: absolute;
-    top: 32%;
+    /*position: absolute;
+    top: 32%;*/
+    margin-top: 28vh;
+    margin-bottom: 0px;
     width: 125px;
     height: 160px;
     opacity: 95%;
 }
 
 div.amountContainer{
-    position: absolute;
-    top: 53%;
+    /*position: absolute;
+    top: 53%;*/
+    margin-top: 0vh;
     display: flex;
     align-items: center;
     text-align: center;
 }
 
 p.amount{
+    margin-block: 10px;
     font-size: 25px;
     color: rgb(121, 49, 49);
     color: brown;
@@ -73,11 +86,14 @@ p.amount{
 }
 
 button.button{
-    position: absolute;
+    /*position: absolute;
     top: 65%;
-    padding: 7px 12px;
+    */
+    margin-top: 3vh;
+    padding: 10px 15px;
     border-radius: 15px;
     border-style: none;
+    font-size: 17px;
     color: rgb(255, 255, 255);
     background-color: hwb(191 21% 47%);
 }
@@ -88,27 +104,31 @@ button.button{
 }
 
 p.desc{
-    position: absolute;
-    top: 70%;
+    /*position: absolute;
+    top: 70%;*/
+    margin-top: 3vh;
+    margin-right: 10px;
+    margin-left: 10px;
     text-align: center;
     font-size: 15px;
     color: brown;
 }
 
-div.card{
+div.new-card-container{
     position: absolute;
-    top: 45%;
-    z-index: 101;
     transition: 1s;
+    top: 20vh;
+    pointer-events: all;
 }
 
-.card.hidden{
-    top: -100%;
+div.new-cont-hidden{
+    top: -150% !important;
 }
 
 div.btn{
     display: flex;
     align-items: center;
+    height: 100%;
     border-radius: 3px;
 }
 
@@ -127,11 +147,83 @@ div.hov{
 }
 
 .tippy-box[data-theme~='custom'] {
-    background-color: antiquewhite;
+    background-color: white;
     color: rgb(0, 0, 0);
     font-family:sans-serif;
 }
 
 h2{
+    font-family: 'Title';
+    font-size: 30px;
     margin:auto;
+}
+
+#end-button{
+    margin-bottom: 10vh;
+    z-index: 6; 
+    transition: 1s;
+    pointer-events: all;
+}
+
+@media screen and (max-width: 749px){
+    p.giftNotice{
+        font-size: 13px;
+    }
+    .tippy-box[data-theme~='custom']{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 569px), screen and (max-height: 464px){
+    .btn > h3{
+        display: none;
+    }
+    p.giftNotice{
+        display: none;
+    }
+    #arrowBack{
+        margin-right: 15px;
+    }
+    #giftIcon{
+        margin-right: 3vw;
+    }
+    div.menu-bar{
+        height: 60px;
+    }
+    img.crystal{
+        margin-top: 24vh;
+        width: 94px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 329px), screen and (max-height: 474px){
+    h2{
+        font-size: 22px;
+    }
+    div.card-container{
+        width: 188px;
+        height: 240px;
+        top: 10%;
+    }
+    #end-button{
+        margin-bottom: 30vh;
+    }
+}
+
+@media screen and (max-height: 539px){
+    #end-button{
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-height: 464px){
+    div.menu-bar{
+        height: 60px;
+    }
+    img.crystal{
+        margin-top: 24vh;
+        width: 94px;
+        height: 120px;
+    }
 }

@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'Title';
-    src: 'Assets/DragonHunter-9Ynxj.otf';
+    src: 'Assets/DragonHunter-9Ynxj.woff';
 }
 
 body{
@@ -30,7 +30,6 @@ div.menu-bar{
     width: 100%;
     background-color: rgb(23, 23, 81);
     color: antiquewhite;
-    z-index: 99;
 }
 
 div.menu-item {
@@ -42,7 +41,6 @@ div.menu-item {
 }
 
 div.card-container{
-    position: relative;
     width: 250px;
     height: 320px;
 }

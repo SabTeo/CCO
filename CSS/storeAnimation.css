@@ -5,7 +5,7 @@ div.lock{
     padding: 1px;
     background-color: #272727fe;
     opacity: 0%;
-    z-index: 100;
+    z-index: 1;
     pointer-events: none;
 }
 
@@ -20,9 +20,10 @@ div.banner{
     height: 100%;
     padding: 1px;
     background: #fffffffe;
-    z-index: 100;
-    pointer-events: all;
-    transition: 0.50s ease-out
+    z-index: 2;
+    transition: 0.50s ease-out;
+    margin: 0px;
+    padding: 0px;
 }
 
 .banner.banner1{
@@ -33,6 +34,7 @@ div.banner{
 .banner.banner2{
     bottom: 0%;
     width: 34%;
+    padding-right: 1px;
     left: 33%;
 }
 
@@ -43,8 +45,7 @@ div.banner{
 }
 
 .banner.hidden{
-    bottom: 101%;
-    pointer-events: all;
+    bottom: 100%;
 }
 
 div.horizontal-banner{
@@ -55,7 +56,7 @@ div.horizontal-banner{
     width: 100%;
     padding: 1px;
     background: #7f077bfe;
-    z-index: 101;
+    z-index: 3;
     pointer-events: none;
     transition: 0.40s ease-out;
 }
@@ -68,4 +69,28 @@ div.horizontal-banner{
     top: 40%;
     height: 20%;
     transition: 0.50s ease-in;
+}
+
+div.anim{
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    pointer-events: none;
+    z-index: 4;
+}
+
+@media screen and (max-width: 329px), screen and (max-height: 474px){
+    div.horizontal-banner{
+        top: 35%;
+    }
+    div.horizontal-banner.p2{
+        top: 30%;
+    }
 }

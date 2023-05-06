@@ -70,3 +70,43 @@ button.gradientbutton:hover{
   opacity: 80%;
   font-size: 15px;
 }
+
+@media screen and (max-width: 499px), screen and (max-height: 499px) {
+  div.box{
+    margin: 0px;
+    border-radius: 0%;
+    height: 100vh;
+    width: 100vw;
+    justify-content: start;
+    padding: 10px;
+  }
+  body{
+    background: none;
+  }
+}
+
+@media screen and (max-width:449px){
+  h1.title{
+    font-size: 30px;
+  }
+  img.logo{
+    width: 98px;
+    height: 68px;
+  }
+}
+
+@media screen and (max-width:359px), screen and (max-height: 424px) {
+  h1.title{
+    font-size: 26px;
+  }
+  img.logo{
+    width: 78px;
+    height: 54px;
+  }
+}
+
+@media screen and (max-height: 624px) {
+  div.box{
+    margin-top: 5vh;
+  }
+}

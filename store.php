@@ -44,10 +44,10 @@
             $a = giftAvailable();
             //si
             if($a>=22){
-              $username = 'rob'; //ATTENZIONE il nome va preso da $session
+              $username = 'mat'; //ATTENZIONE il nome va preso da $session
               $connection = dbconnect();
               $c = giftClaimed($connection, $username);
-              if(!$c) echo "<p>ecco il tuo regalo!$c</p>";
+              if(!$c) echo "<p class=\"giftNotice\">ecco il tuo regalo!$c</p>";
               else{
                 goto end;
               }
@@ -57,10 +57,8 @@
               end:
               if($a!=1){
                 echo "<p class=\"giftNotice\">disponibile tra: $a ore!</p>";
-                return;
               }
-              echo "<p class=\"giftNotice\">disponibile tra: $a ora!</p>";
-              return;
+              else echo "<p class=\"giftNotice\">disponibile tra: $a ora!</p>";
             }
           ?>
         </div>
@@ -69,33 +67,36 @@
 
     <div class="central">
       <img class="crystal" src="Assets/crystal.png">
-      <button class="button" onclick="buyAnim()" id="buy-button">Acquista</button>
-      <p class="desc">Ogni pacchetto contiene una carta casuale non posseduta</p>
-      <button class="button invisible" id="end-button" 
-              style="top:75%; z-index:102; transition:1s;">OK</button>
       <div class="amountContainer">
         <!--mostra cristalli posseduti da user memorizzato in sessione-->
         <?php require_once 'PHP/dbConnection.php';
-          $username = 'rob'; //ATTENZIONE il nome va preso da $session
+          $username = 'mat'; //ATTENZIONE il nome va preso da $session
           $connection = dbconnect();
           $val = getValuta($connection, $username);
           echo"<p class=\"amount\" id=\"amountAv\">$val</p>";
         ?>
         <p class="amount">/100</p>
       </div>
+      <button class="button" onclick="buyAnim()" id="buy-button">Acquista</button>
+      <p class="desc">Ogni pacchetto contiene una carta casuale non posseduta</p>
+    </div>
       <!--chiamata ajax per la nuova carta e aggiornamento db-->
-      <div class="card-container" id="card-container">
-        <div class="card flipped hidden" id="card-new">
-        <div class="card-front">Stasera lol?</div>
-          <div class="card-back">
-            <img src="Assets/sapienza.jpg" 
-              class="back-image"
-              alt="sapienza logo">
+      <div class="anim">
+        <div class="card-container new-card-container new-cont-hidden" id="new-card-cont">
+          <div class="card flipped" id="card-new">
+          <div class="card-front">Stasera lol?</div>
+            <div class="card-back">
+              <img src="Assets/sapienza.jpg" 
+                class="back-image"
+                alt="sapienza logo">
+            </div>
           </div>
         </div>
+        <button class="button invisible" id="end-button" 
+                style="top:75%; z-index:102; transition:1s;">OK</button>
       </div>
 
-    </div>
+
   </div>
 </body>
 </html>

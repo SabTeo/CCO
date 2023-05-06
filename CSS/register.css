@@ -14,10 +14,11 @@ div.box{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 5%;
+  margin-top: 5%;
   padding: 40px;
   background-color: white;
   border-radius: 20px;
+  min-width: 420px;
 }
 
 .box > h1{
@@ -31,11 +32,13 @@ form.form-signin{
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 input.form-control{
   margin-top: 2vh;
   margin-bottom: 1vh;
+  width: 100%;
 }
 
 button.gradientbutton{
@@ -63,4 +66,38 @@ button.gradientbutton:hover{
 div.bottom{
   margin-top: 2vh;
   text-align: center;
+}
+
+@media screen and (max-height: 544px) {
+  div.box{
+    margin-top: 5vh;
+  }
+}
+
+@media screen and (max-width: 499px), screen and (max-height: 499px) {
+  div.box{
+    margin: 0px;
+    border-radius: 0%;
+    
+    justify-content: start;
+    padding: 10px;
+    min-width: 400px;
+  }
+  body{
+    background: none;
+  }
+  form.form-signin{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 354px), screen and (max-height: 359px) {
+  .box > h1{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 2vh;
+  }
+  form.form-signin{
+    width: 60%;
+  }
 }

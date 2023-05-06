@@ -2,10 +2,13 @@
 function buyAnim(){
     document.getElementById("buy-button").disabled = true;
     document.getElementById("lock").classList.add("enabled");
-    newCard = document.getElementById("card-new")
-    newCard.addEventListener("click", ()=>{newCard.classList.toggle("flipped")})
+    var flipOnce = false;
+    newCard = document.getElementById("card-new");
+    newCard.addEventListener("click", ()=>{newCard.classList.toggle("flipped");
+                                            flipOnce = true; 
+                                            });
     setTimeout(()=>{
-        document.getElementById("b1").classList.remove("hidden")
+        document.getElementById("b1").classList.toggle("hidden")
     }, 200);
     setTimeout(()=>{
         document.getElementById("b2").classList.remove("hidden")
@@ -20,12 +23,13 @@ function buyAnim(){
         document.getElementById("horizontal").classList.add("p2")
     }, 1100);
     setTimeout(()=>{
-        document.getElementById("card-new").classList.remove("hidden")
+        document.getElementById("new-card-cont").classList.remove("new-cont-hidden")
     }, 1400);
     setTimeout(()=>{
         document.getElementById("end-button").addEventListener("click", ()=>{
-            if(newCard.classList.contains("flipped")){
-                newCard.classList.toggle("flipped") 
+            if(!flipOnce){
+                newCard.classList.toggle("flipped");
+                document.getElementById("end-button").disabled = true;
                 setTimeout(()=>{
                     window.location.reload()
                 }, 900);

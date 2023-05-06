@@ -20,7 +20,7 @@
                 <form name="myForm" id="form" action="" onsubmit="return register()" method="POST"
                         class="form-signin needs-validation">
                     <input type="text" placeholder="Username" name="Username"
-                        class="form-control" title="" id="userfield" size="30"
+                        class="form-control" title="" id="userfield" size=""
                         onchange="return isUserValid()" onfocusout="return isUserValid()"
                         required>
                     <div class="invalid-message" id="invUser"></div>
