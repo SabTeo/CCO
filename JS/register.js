@@ -118,6 +118,7 @@ function isPassValid(){
 }
 
 function resHandler(e){
+    if(!(e.target.readyState == 4 && e.target.status == 200))return;
     res = e.target.responseText;
     switch(res){
         case('SUCCESS'):
@@ -152,9 +153,10 @@ async function register(){
 
 function init(){
     $('#form').submit(function(e){
-    e.preventDefault();
-    //per riabilitare il submit
-    //$(this).unbind('submit').submit()
+        $('.btn').prop("disabled",true);
+        e.preventDefault();
+       register();
+       $('.btn').prop("disabled",false);
     });
     $('.invalid-message').html('');
     $('#userfield').css('border-color', '');
@@ -162,4 +164,4 @@ function init(){
     $('#passwordfield').css('border-color', '');
 }
 
-$(window).on('load',init());
+$(window).on('load',init);

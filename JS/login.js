@@ -1,4 +1,5 @@
 function resHandler(e){
+    if(!(e.target.readyState == 4 && e.target.status == 200))return;
     //$('.invalid-message').html(e.target.responseText);
     res = e.target.responseText;
     if(res!="LOGIN_SUCCESSFUL"){
@@ -30,13 +31,13 @@ function login(){
 
 function init(){
     $('#form').submit(function(e){
-    e.preventDefault();
-    //per riabilitare il submit
-    //$(this).unbind('submit').submit()
+        e.preventDefault();
+        login();
     });
     $('.invalid-message').html('');
     $('#userfield').css('border-color', '');
     $('#passwordfield').css('border-color', '');
 }
 
-$(window).on("load", init());
+$(window).on('load', init);
+

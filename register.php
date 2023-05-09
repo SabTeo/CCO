@@ -11,27 +11,25 @@
         <link rel="stylesheet" href="CSS/register.css"/>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
         <script src="JS/jquery-min.js"></script>   
-        <script defer src="JS/register.js"></script>                                                                                                                                                                   
+        <script src="JS/register.js"></script>                                                                                                                                                                   
     </head>
     <body>
         <div class="mainContainer">
             <div class="box">
                 <h1>Registrazione</h1>
-                <form name="myForm" id="form" action="" onsubmit="return register()" method="POST"
+                <form name="myForm" id="form" onsubmit="" method="POST"
                         class="form-signin needs-validation">
                     <input type="text" placeholder="Username" name="Username"
                         class="form-control" title="" id="userfield" size=""
-                        onchange="return isUserValid()" onfocusout="return isUserValid()"
-                        required>
+                        onchange="return isUserValid()" required>
                     <div class="invalid-message" id="invUser"></div>
                     <input type="text" placeholder="Email" name="Email"
                         class="form-control" title="" id="mailfield"
-                        onchange="return isMailValid()" onfocusout="return isMailValid()"
-                        required>
+                        onchange="return isMailValid()" required>
                     <div class="invalid-message" id="invMail"></div>
                     <input type="password" placeholder="Password" name="inputPassword"
                         class="form-control" title="" id="passwordfield"
-                        onchange="return isPassValid()" onfocusout="return isPassValid()" required>
+                        onchange="return isPassValid()" required>
                     <div class="invalid-message" id="invPass"></div>
                     <button class="btn btn-primary btn-lg gradientbutton" type="submit">Registrati</button>
                 </form>

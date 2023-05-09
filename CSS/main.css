@@ -4,13 +4,16 @@
 
 @font-face {
     font-family: 'Title';
-    src: '../Assets/DragonHunter.woff2',
-        '../Assets/DragonHunter.woff';
+    src: url('/Assets/DragonHunter.eot') format('embedded-opentype'),
+        url('/Assets/DragonHunter.otf') format("opentype"),
+        url('/Assets/DragonHunter.woff2') format('woff2'),
+        url('/Assets/DragonHunter.woff') format('woff'),
+        url('/Assets/DragonHunter.ttf') format('truetype');
 }
 
 body{
     margin: 0px;
-    background-image: url("../Assets/star_Bg.png");
+    background-image: url("/Assets/star_Bg.png");
 }
 
 div.central{

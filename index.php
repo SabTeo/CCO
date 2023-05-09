@@ -22,15 +22,15 @@
         <link rel="stylesheet" href="CSS/index.css"/>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
         <script src="JS/jquery-min.js"></script>   
-        <script defer src="JS/login.js"></script>                                                                                                                                                                   
+        <script src="JS/login.js"></script>                                                                                                                                                                   
     </head>
     <body>
         <div class="mainContainer">
             <div class="box">
                 <img class="logo" src="Assets/cards.svg" width="130" height="90">
-                <h1 class="title"><b>Carte Collezionabili Online</b></h1>
+                <h1 class="title">Carte Collezionabili Online</h1>
                 <div class="invalid-message"></div>
-                <form name="myForm" id="form" action="" onsubmit="return login()" method="POST"
+                <form name="myForm" id="form" onsubmit="" method="POST"
                         class="form-signin needs-validation">
                     <input type="text" placeholder="Username" name="Username"
                         class="form-control" title="" id="userfield"
