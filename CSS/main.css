@@ -4,7 +4,8 @@
 
 @font-face {
     font-family: 'Title';
-    src: 'Assets/DragonHunter-9Ynxj.woff';
+    src: '../Assets/DragonHunter.woff2',
+        '../Assets/DragonHunter.woff';
 }
 
 body{
@@ -41,6 +42,7 @@ div.menu-item {
 }
 
 div.card-container{
+    position: relative;
     width: 250px;
     height: 320px;
 }
@@ -59,6 +61,7 @@ div.card{
 
 div.card-front{
     position: absolute;
+    display: flex;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -81,3 +84,91 @@ img.back-image{
     width: 100%;
     height: 80%;
 }
+
+/* PROVE */
+
+div.prova{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    margin-block: 20px;
+}
+
+div.card-container2{
+    position: relative;
+    width: 125px;
+    height: 160px;
+}
+
+div.card-container3{
+    display:flex;
+    width: 150px;
+    height: 192px;
+    background-color: #822434;
+    border-radius: 10px;
+}
+
+div.prova2{
+    position: relative;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+}
+
+div.card-content{
+    flex-grow: 1;
+    border-radius: 10px;
+    background-color: #a98a8f;
+    overflow: hidden;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+img.previmg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+div.card-fill{
+    flex-grow: 1;
+    background-color: var(--sapienza);
+    display: flex;
+    border-radius: 0px;
+    padding: 3px;
+}
+
+.card-fill .previmg{
+    height: 50%;
+}
+
+.card-fill h4{
+    width: 100%;
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: 'Title';
+}
+
+.card-fill hr{
+    width:75%;
+    margin-block:5px;
+    border: 1px solid rgb(80, 60, 60);
+    opacity: 80%;
+}
+
+.card-fill p{
+    font-size: 15px;
+}
+
+.card-fill p{
+    font-size: 13px;
+    margin-inline: 10px;
+}
+
+
+
+
+

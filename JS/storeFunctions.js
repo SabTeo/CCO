@@ -1,4 +1,3 @@
-//animazione invocata da buy-button in html
 function buyAnim(){
     document.getElementById("buy-button").disabled = true;
     document.getElementById("lock").classList.add("enabled");
@@ -43,9 +42,13 @@ function buyAnim(){
     }, 2200);
 }
 
+// ATTEZIONE var valuta e var user inizializzate in php
+var valuta;
+var user;
+
 function enoughCurrency(){
-    amount = parseInt($("#amountAv").html());
-    if(amount<100) return(false);
+    //amount = parseInt($("#amountAv").html());
+    if(valuta<100) return(false);
     return(true);
 }
 
@@ -59,6 +62,17 @@ function colorAmount(){
     }
 }
 
+function buy(){
+    if(enoughCurrency()){
+        req = '/PHP/newCard.php?user='+String(user);
+        $.get(req, function(data) {
+            //alert(data);
+            //$('#card-front').html(data);
+          });
+        buyAnim();
+    }
+}
+
 function update(){
     colorAmount();
     tippy('.hov',{
@@ -68,4 +82,4 @@ function update(){
     });
 }
 
-$( window ).on( "load",update());
+$(window).on( "load",update());

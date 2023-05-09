@@ -74,10 +74,14 @@
           $connection = dbconnect();
           $val = getValuta($connection, $username);
           echo"<p class=\"amount\" id=\"amountAv\">$val</p>";
+          echo"<script>
+            var valuta = $val;
+            var user = \"$username\";
+          </script>";
         ?>
         <p class="amount">/100</p>
       </div>
-      <button class="button" onclick="buyAnim()" id="buy-button">Acquista</button>
+      <button class="button" onclick="buy()" id="buy-button">Acquista</button>
       <p class="desc">Ogni pacchetto contiene una carta casuale non posseduta</p>
     </div>
       <!--chiamata ajax per la nuova carta e aggiornamento db-->
@@ -85,9 +89,18 @@
 
         <div class="anibox anihidden" id="anibox">
 
-        <div class="card-container new-card-container" id="new-card-cont">
+        <div class="card-container new-card-container">
           <div class="card flipped" id="card-new">
-          <div class="card-front">Stasera lol?</div>
+            <div class="card-front" id ="card-front">
+              <div class="card-fill">
+                <div class="card-content">
+                  <img src="Assets/Images/TrickTotem.png" class="previmg">
+                  <h4><b>Totem dell'inganno</b> <hr> </h4>
+                  <i>"ingannali tutti"</i>
+                  <p>La migliore carta di Hearthstone mai concepita da Blizzard Entertainment</p>
+                </div>
+              </div>
+          </div>
             <div class="card-back">
               <img src="Assets/sapienza.jpg" 
                 class="back-image"
@@ -95,8 +108,7 @@
             </div>
           </div>
         </div>   
-        <button class="button invisible" id="end-button" 
-                style="top:75%; z-index:102; transition:1s;">OK</button>
+        <button class="button invisible" id="end-button">OK</button>
 
         </div>
 
