@@ -4,66 +4,71 @@
 ?>
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte Collezionabili Online</title>
-    <link rel="stylesheet" href="CSS/store.css">
-    <link rel="stylesheet" href="CSS/main.css">
-    <link rel="stylesheet" href="CSS/store.css">
-    <script src="JS/jquery-min.js"></script>
-  </head>
-  <body>
-  <?php
-    if(!isset($_SESSION['username'])) {
-      // anomalo, di chi sono le carte che devo caricare?
-      goto end;
-    }
-    else{
-      $currentUser = $_SESSION['username'];
-      echo"<h1>$currentUser</h1>";
-    }
-    end: ;
-  ?> 
-    <div class="prova">
-
-    <div></div>
-
-    <div class="prova2">
-      <div class="card-container3">  
-        <div class="card-content">
-          <img src="Assets/Images/TrickTotem.png" class="previmg">
+    <title>Collezione</title>
+    <link rel="stylesheet" href="CSS/collezione.css"/>
+    <link rel="stylesheet" href="CSS/main.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script defer src="JS/collezione.js"></script> 
+</head>
+<body>
+    <div class="menu-bar">
+      <div class="menu-item">
+        <div class="btn">
+          <img id="profile" src="Assets/account.svg" height="30px" width="30"> </img>
+          <h3>Utente</h3>
+        </div>
+      </div>
+      <div class="menu-item top-item">
+        <h2>Collezione</h2>
+      </div>
+      <div class="menu-item">
+        <div class="btn">
+            <h3>Negozio</h3>
+            <img id="cart" src="Assets/cart.svg" height="20px" width="20"> </object>
         </div>
       </div>
     </div>
-
-    <div></div>
+    <div class="central">
+        <nav class="options">
+            <div class="dropdown">
+                <button class="dropbtn">Ordina per</button>
+                <div class="dropdown-content">
+                  <div id="default">ID</div>
+                  <div id="nome">Nome</div>
+                </div>
+            </div>
+            <form class="check">
+                <input type="checkbox" id="checco">
+                <label for="checco">Mostra non possedute</label>
+            </form>
+        </nav>
+        <div id="zonaCarte"></div>
+        <script>
+            $(document).ready(function(){
+              DisplayCollezione("default"); 
+              $("#default").click(function(){DisplayCollezione('default')});
+              $("#nome").click(function(){DisplayCollezione('nome')});
+              $("#checco").click(function(){cambiastatocheck()});
+            });
+        </script>
 
     </div>
-
-    <div class="central">
-
-    <div class="card-container">
-        <div class="card" id="card-new">
-        <div class="card-front" id ="card-front">
-          <div class="card-fill">
-            <div class="card-content">
-              <img src="Assets/Images/TrickTotem.png" class="previmg">
-              <h4>Totem dell'inganno <hr> </h4>
-              <i>"ingannali tutti"</i>
-              <p>La migliore carta di Hearthstone mai concepita da Blizzard Entertainment</p>
-            </div>
-          </div>
-        </div>
-          <div class="card-back">
-            <img src="Assets/sapienza.jpg" 
-              class="back-image"
-              alt="sapienza logo">
-          </div>
-        </div>
-      </div> 
-
-    </div> 
-
-  </body>
+    <!--
+    <div id="zonaCarte">
+    </div>
+    <div id="zonaDisplay">
+    </div>
+    
+    <script>
+    $(document).ready(function(){
+          DisplayCollezione("default"); 
+          $("#default").click(function(){DisplayCollezione('default')});
+          $("#nome").click(function(){DisplayCollezione('nome')});
+          $("#checco").click(function(){cambiastatocheck()});
+    });
+    </script>
+-->
+</body>
 </html>

@@ -103,7 +103,7 @@ div.card-container2{
     height: 160px;
 }
 
-div.card-container3{
+div.card-container-prev{
     display:flex;
     width: 150px;
     height: 192px;
@@ -111,7 +111,7 @@ div.card-container3{
     border-radius: 10px;
 }
 
-div.prova2{
+div.preview{
     position: relative;
     padding: 2px;
     display: flex;
