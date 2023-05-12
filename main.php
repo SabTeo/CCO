@@ -13,6 +13,11 @@
     <script defer src="JS/collezione.js"></script> 
 </head>
 <body>
+
+    <div id='overlay' class="overlay hidden cover">
+        <div id="zonaDisplay"></div>
+    </div>
+
     <div class="menu-bar">
       <div class="menu-item">
         <div class="btn">
@@ -24,26 +29,26 @@
         <h2>Collezione</h2>
       </div>
       <div class="menu-item">
-        <div class="btn">
+        <div class="btn" onclick="window.location='store.php';">
             <h3>Negozio</h3>
             <img id="cart" src="Assets/cart.svg" height="20px" width="20"> </object>
         </div>
       </div>
     </div>
-    <div class="central">
-        <nav class="options">
-            <div class="dropdown">
-                <button class="dropbtn">Ordina per</button>
-                <div class="dropdown-content">
-                  <div id="default">ID</div>
-                  <div id="nome">Nome</div>
-                </div>
+    <nav class="options">
+        <div class="dropdown">
+            <button class="dropbtn">Ordina per</button>
+            <div class="dropdown-content">
+              <div id="default">ID</div>
+              <div id="nome">Nome</div>
             </div>
-            <form class="check">
-                <input type="checkbox" id="checco">
-                <label for="checco">Mostra non possedute</label>
-            </form>
-        </nav>
+        </div>
+        <form class="check">
+            <input type="checkbox" id="checco">
+            <label for="checco">Mostra non possedute</label>
+        </form>
+    </nav>
+    <div class="central">
         <div id="zonaCarte"></div>
         <script>
             $(document).ready(function(){
@@ -53,22 +58,7 @@
               $("#checco").click(function(){cambiastatocheck()});
             });
         </script>
+    </div>
 
-    </div>
-    <!--
-    <div id="zonaCarte">
-    </div>
-    <div id="zonaDisplay">
-    </div>
-    
-    <script>
-    $(document).ready(function(){
-          DisplayCollezione("default"); 
-          $("#default").click(function(){DisplayCollezione('default')});
-          $("#nome").click(function(){DisplayCollezione('nome')});
-          $("#checco").click(function(){cambiastatocheck()});
-    });
-    </script>
--->
 </body>
 </html>

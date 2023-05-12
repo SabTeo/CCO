@@ -31,16 +31,27 @@
                 while($tuple!=false){
                     $nome=$tuple['nomecarta'];
                     $id=$tuple['id'];
-                    echo"<div class=\"grid-item\" id=\"$id\">$nome</div>";
+                    //DEBUG TOGLIERE// 
+                    if($id>2) $id = 'placeholder';
+                    //
+                    echo"<div class=\"preview\">
+                            <div class=\"card-container-prev\" id=\"$id\">  
+                                <div class=\"card-content\">";
+/*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">
+                                </div>
+                            </div>
+                        </div>
+                    ";
                     $tuple=pg_fetch_array($result, null, PGSQL_ASSOC);
                 } 
                 echo"<script>$(document).ready(function(){
-                    $(\".grid-item\").click(function(){
-                        $(\"#zonaDisplay\").load(\"DisplayCard.php\",{id:this.id},
+                    $(\".card-container-prev\").click(function(){
+                        $(\"#zonaDisplay\").load(\"PHP/displayCard.php\",{id:this.id},
                         function(responseTxt, statusTxt, xhr){
                             if(statusTxt == \"error\")
                                 alert(\"Errore\" + xhr.status + \":\" + xhr.statusText);
                         });
+                        showOverlay();
                     });
                 });</script>";
                 echo"</div>";

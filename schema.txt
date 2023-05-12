@@ -1,13 +1,5 @@
 Usr: ltw, Db: ccodb, pw:snap
 
-Modifiche:
-
-ALTER TABLE users DROP CONSTRAINT users_pkey;
-ALTER TABLE users ADD PRIMARY KEY (nome);
-ALTER TABLE users ADD UNIQUE (email);
-ALTER TABLE users ALTER COLUMN paswd TYPE varchar(256);
-ALTER TABLE users ALTER COLUMN email TYPE varchar(64);
-
 Table Users(
     email varchar(64), 
     nome varchar(16),
@@ -19,4 +11,27 @@ Table Users(
     key(email)
 )
 
+Table Carte(
+    id integer, 
+    nomecarta varchar(255),
+    descrizione varchar(255),
+    rarita iteger,
+    
+    primary_key(id)
+)
 
+Table Possiede(
+    username varchar(16), 
+    cardId intger,
+
+    foreign key(username) -> Users(nome)
+    foreign key(cardid) -> Carte(id)
+)
+
+
+SCRIPT SEEDING:	
+
+insert into carte(id, nomecarta, descrizione, rarita) values
+(1, e'Totem dell\'inganno', 'La migliore carta di Hearthstone mai concepita da Blizzard Entertainment', 2),
+(2, 'Leeroy Jenkins', e'\"Alright chums, let\'s do this...\nLEEEROOOOOOYYYY\nmmmJEENKIIIIINS', 2),
+;

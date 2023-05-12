@@ -48,6 +48,7 @@
                             if(statusTxt == \"error\")
                                 alert(\"Errore\" + xhr.status + \":\" + xhr.statusText);
                         });
+                        showOverlay();
                     });
                 });</script>";
                 echo"</div>";

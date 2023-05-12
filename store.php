@@ -29,7 +29,7 @@
 
     <div class="menu-bar">
       <div class="menu-item">
-        <div class="btn">
+        <div class="btn" onclick="window.location='main.php';">
           <img id="arrowBack" src="Assets/arrow_back.svg" height="30px" width="30"> </img>
           <h3>Collezione</h3>
         </div>

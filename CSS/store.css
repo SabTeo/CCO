@@ -34,7 +34,7 @@ div.menu-bar{
 img.crystal{
     /*position: absolute;
     top: 32%;*/
-    margin-top: 28vh;
+    margin-top: 20vh;
     margin-bottom: 0px;
     width: 125px;
     height: 160px;
@@ -159,7 +159,7 @@ h2{
         height: 60px;
     }
     img.crystal{
-        margin-top: 24vh;
+        margin-top: 16vh;
         width: 94px;
         height: 120px;
     }
@@ -181,7 +181,7 @@ h2{
         height: 60px;
     }
     img.crystal{
-        margin-top: 24vh;
+        margin-top: 16vh;
         width: 94px;
         height: 120px;
     }

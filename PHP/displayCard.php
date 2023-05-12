@@ -10,9 +10,13 @@
                 $id= $_POST['id'];
                 $q1 = "select * from carte where id= $1";
                 $result = pg_query_params($dbconn, $q1, array($id));
-                $tuple=pg_fetch_array($result, null, PGSQL_ASSOC); 
+                $tuple=pg_fetch_array($result, null, PGSQL_ASSOC);
+                $id=$tuple['id'];
                 $nome=$tuple['nomecarta'];
-                echo"<div>$nome</div>";
+                $desc=$tuple['descrizione'];
+                echo"<h1>$id<h1>";
+                echo"<h1>$nome<h1>";
+                echo"<div>$desc</div>";
             }
         ?> 
     </body>
