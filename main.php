@@ -10,13 +10,16 @@
     <link rel="stylesheet" href="CSS/collezione.css"/>
     <link rel="stylesheet" href="CSS/main.css"/>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script defer src="JS/collezione.js"></script> 
+    <script src="JS/collezione.js"></script> 
 </head>
 <body>
 
     <div id='overlay' class="overlay hidden cover">
         <div id="zonaDisplay"></div>
     </div>
+    <img id=esc class="hidden" src="Assets/esc.svg" height="38px" width="38"
+          onclick="$('#overlay').toggleClass('hidden');
+              $('#esc').toggleClass('hidden');">
 
     <div class="menu-bar">
       <div class="menu-item">
@@ -31,7 +34,7 @@
       <div class="menu-item">
         <div class="btn" onclick="window.location='store.php';">
             <h3>Negozio</h3>
-            <img id="cart" src="Assets/cart.svg" height="20px" width="20"> </object>
+            <img id="cart" src="Assets/cart.svg" height="20px" width="20">
         </div>
       </div>
     </div>

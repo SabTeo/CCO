@@ -15,7 +15,7 @@ Table Carte(
     id integer, 
     nomecarta varchar(255),
     descrizione varchar(255),
-    rarita iteger,
+    rarita iteger,			=1,2,3,4 rispettivamente comune, rara, epica, spciale(descrizione è un link)
     
     primary_key(id)
 )
@@ -33,5 +33,7 @@ SCRIPT SEEDING:
 
 insert into carte(id, nomecarta, descrizione, rarita) values
 (1, e'Totem dell\'inganno', 'La migliore carta di Hearthstone mai concepita da Blizzard Entertainment', 2),
-(2, 'Leeroy Jenkins', e'\"Alright chums, let\'s do this...\nLEEEROOOOOOYYYY\nmmmJEENKIIIIINS', 2),
+(2, 'Leeroy Jenkins', e'\"Alright chums, let\'s do this...\nLEEEROOOOOOYYYY\nmmmJEENKIIIIINS\"', 2),
+(3, 'Anakin Dripwalker', 'https://www.youtube.com/watch?v=ujFnkh4SwAI', 4),
+(4, 'Minilla', 'È proprio quello che sembra, il figlio brutto di Godzilla apparso nel celebre ottavo film della saga originale', 1)
 ;

@@ -14,7 +14,7 @@
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="https://unpkg.com/tippy.js@6"></script>
   <script src="JS/jquery-min.js"></script>
-  <script defer src="JS/storeFunctions.js"></script>
+  <script src="JS/storeFunctions.js"></script>
   
 </head>
 
@@ -39,7 +39,7 @@
       </div>
       <div class="menu-item">
         <div class="hov">
-          <img id="giftIcon" src="Assets/gift.svg" height="20px" width="20"> </object>
+          <img id="giftIcon" src="Assets/gift.svg" height="20px" width="20"> 
           <?php require_once 'PHP/dbConnection.php'; require_once 'PHP/giftSystem.php';
             $a = giftAvailable();
             //si

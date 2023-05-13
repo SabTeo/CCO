@@ -33,4 +33,10 @@ function cambiastatocheck(){
 
 function showOverlay(){
     $('#overlay').toggleClass('hidden');
+    $('#esc').toggleClass('hidden');
+}
+
+function flip(){
+    //decommentare per far girare le carte nella collezione
+    //$('#card-big').toggleClass('flipped');
 }

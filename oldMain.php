@@ -47,7 +47,7 @@
         <div class="card" id="card-new">
         <div class="card-front" id ="card-front">
           <div class="card-fill">
-            <div class="card-content">
+            <div class="card-content-big">
               <img src="Assets/Images/TrickTotem.png" class="previmg">
               <h4>Totem dell'inganno <hr> </h4>
               <i>"ingannali tutti"</i>

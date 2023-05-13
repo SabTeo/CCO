@@ -15,7 +15,6 @@ div.menu-bar{
   height: 25px;
   width: 25px;
 }
-
 .menu-item:last-child{
   justify-content: right;
   padding-left: 0px;
@@ -56,15 +55,16 @@ div.central{
 nav.options{
   display: flex;
   align-items: center;
-  padding-block: 5px;
-  padding-left: 60px;
-  background-color: rgb(46, 62, 118);
+  padding-block: 10px;
+  padding-left: 300px;
+  background-color: rgba(1, 57, 135, 0.25);
+  opacity: 100%;
 }
 
 button.dropbtn {
   background-color: #04AA6D;
   color: white;
-  padding: 16px;
+  padding: 12px;
   font-size: 16px;
   border: none;
 }
@@ -89,22 +89,39 @@ form.check{
   color: rgb(208, 220, 231);
 }
 
-
-div.overlay{
+.overlay{
   position: fixed;
   height: 100%;
   width: 100%;
-  z-index: 99;
+  z-index: 98;
   pointer-events: all;
-  opacity: 85%;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0, 0.90);
   transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-div.overlay.hidden{
+div.card-container{
+  z-index: 99;
+}
+
+.hidden{
   z-index: 2;
   pointer-events: none;
   opacity: 0%;
+}
+
+#esc{
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  z-index: 99;
+}
+
+#esc:hover{
+  cursor: pointer;
 }
 
 /* da vedere */

@@ -31,10 +31,12 @@
                 while($tuple!=false){
                     $nome=$tuple['nomecarta'];
                     $id=$tuple['id'];
+                    $p=$tuple['posseduta'];
                     //DEBUG TOGLIERE// 
-                    if($id>2) $id = 'placeholder';
+                    if($id>4) $id = 'placeholder';
                     //
-                    echo"<div class=\"preview\">
+                    if($p==1){
+                        echo"<div class=\"preview\">
                             <div class=\"card-container-prev\" id=\"$id\">  
                                 <div class=\"card-content\">";
 /*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">
@@ -42,8 +44,20 @@
                             </div>
                         </div>
                     ";
-                    $tuple=pg_fetch_array($result, null, PGSQL_ASSOC);
-                } 
+                    }
+                    else{
+                        echo"<div class=\"not-owned\">
+                        <div class=\"card-container-prev\" id=\"$id\"> 
+                        <div class=\"shadow\"></div> 
+                            <div class=\"card-content\">";
+/*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">
+                            </div>
+                        </div>
+                    </div>
+                    ";
+                    }
+                $tuple=pg_fetch_array($result, null, PGSQL_ASSOC); 
+                }
                 echo"<script>$(document).ready(function(){
                     $(\".card-container-prev\").click(function(){
                         $(\"#zonaDisplay\").load(\"PHP/displayCard.php\",{id:this.id},
