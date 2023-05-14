@@ -97,7 +97,7 @@ img.back-image{
 
 div.card-fill{
     flex-grow: 1;
-    background-color: var(--sapienzap);
+    background-color: var(--sapienza);
     display: flex;
     border-radius: 10px;
     padding: 0px;

@@ -12,7 +12,7 @@ function resHandler(e){
             $('#passwordfield').css('border-color', 'red');
         }
     }
-    else window.location.href = "main.php";
+    else window.location.href = "collezione.php";
 }
 
 function login(){
