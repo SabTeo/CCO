@@ -1,16 +1,6 @@
-<?php
-  session_start();
-  if(!array_key_exists('username',$_SESSION)){
-    if(array_key_exists('user', $_COOKIE)){
-            if(isset($_COOKIE['user'])){
-                $user = $_COOKIE['user'];
-                session_start();
-                $_SESSION['username']= $user;
-            //header("Location: /main.php");
-        }
-    } 
-    else{header("Location:/index.php");}
-  }
+<?php session_start(); //dichiara variabile $_SESSION per questa pagina (inizializzata al login!)
+    //isUserLogged();
+    //if not redirect to login
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,8 +29,8 @@
 
     <div></div>
 
-    <div class="prova2">
-      <div class="card-container3">  
+    <div class="preview">
+      <div class="card-container-prev">  
         <div class="card-content">
           <img src="Assets/Images/TrickTotem.png" class="previmg">
         </div>
@@ -57,7 +47,7 @@
         <div class="card" id="card-new">
         <div class="card-front" id ="card-front">
           <div class="card-fill">
-            <div class="card-content">
+            <div class="card-content-big">
               <img src="Assets/Images/TrickTotem.png" class="previmg">
               <h4>Totem dell'inganno <hr> </h4>
               <i>"ingannali tutti"</i>
@@ -74,10 +64,6 @@
       </div> 
 
     </div> 
-    <div>
-      <a href=/Collezione/Main.php>Collezione</a></br>
-      <a href=Logout.php>Logout</a>
-    </div>
 
   </body>
 </html>

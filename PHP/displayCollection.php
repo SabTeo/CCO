@@ -1,13 +1,6 @@
-<?php session_start(); //dichiara variabile $_SESSION per questa pagina (inizializzata al login!)
-    //isUserLogged();
-    //if not redirect to login
-?>
-<?php
-
-    $dbconn = pg_connect("host=localhost port=5432 dbname=Progetto_db
-    user=postgres password=220400") 
-                or die('Could not connect: ' . pg_last_error());
-
+<?php require_once "dbConnection.php";
+       $dbconn = dbconnect();
+       session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,16 +27,40 @@
 
                 $result = pg_query_params($dbconn, $q1,array($utente));
                 $tuple=pg_fetch_array($result, null, PGSQL_ASSOC);
-                echo"<div class=\"grid-container\">";
+                echo"<div class=\"grid-cont\">";
                 while($tuple!=false){
                     $nome=$tuple['nomecarta'];
                     $id=$tuple['id'];
-                    echo"<div class=\"grid-item\" id=\"$id\">$nome</div>";
-                    $tuple=pg_fetch_array($result, null, PGSQL_ASSOC);
-                } 
+                    $p=$tuple['posseduta'];
+                    //DEBUG TOGLIERE// 
+                    if($id>4) $id = 'placeholder';
+                    //
+                    if($p==1){
+                        echo"<div class=\"preview\">
+                            <div class=\"card-container-prev\" id=\"$id\">  
+                                <div class=\"card-content\">";
+/*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">
+                                </div>
+                            </div>
+                        </div>
+                    ";
+                    }
+                    else{
+                        echo"<div class=\"not-owned\">
+                        <div class=\"card-container-prev\" id=\"$id\"> 
+                        <div class=\"shadow\"></div> 
+                            <div class=\"card-content\">";
+/*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">
+                            </div>
+                        </div>
+                    </div>
+                    ";
+                    }
+                $tuple=pg_fetch_array($result, null, PGSQL_ASSOC); 
+                }
                 echo"<script>$(document).ready(function(){
-                    $(\".grid-item\").click(function(){
-                        $(\"#zonaDisplay\").load(\"DisplayCard.php\",{id:this.id},
+                    $(\".card-container-prev\").click(function(){
+                        $(\"#zonaDisplay\").load(\"PHP/displayCard.php\",{id:this.id},
                         function(responseTxt, statusTxt, xhr){
                             if(statusTxt == \"error\")
                                 alert(\"Errore\" + xhr.status + \":\" + xhr.statusText);
