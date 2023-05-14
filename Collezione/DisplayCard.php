@@ -1,7 +1,7 @@
 <?php
 
-    $dbconn = pg_connect("host=localhost port=5432 dbname=ccodb 
-    user=ltw password=snap") 
+    $dbconn = pg_connect("host=localhost port=5432 dbname=Progetto_db
+    user=postgres password=220400") 
                 or die('Could not connect: ' . pg_last_error());
 
 ?>

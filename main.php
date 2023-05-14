@@ -1,6 +1,16 @@
-<?php session_start(); //dichiara variabile $_SESSION per questa pagina (inizializzata al login!)
-    //isUserLogged();
-    //if not redirect to login
+<?php
+  session_start();
+  if(!array_key_exists('username',$_SESSION)){
+    if(array_key_exists('user', $_COOKIE)){
+            if(isset($_COOKIE['user'])){
+                $user = $_COOKIE['user'];
+                session_start();
+                $_SESSION['username']= $user;
+            //header("Location: /main.php");
+        }
+    } 
+    else{header("Location:/index.php");}
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,6 +74,10 @@
       </div> 
 
     </div> 
+    <div>
+      <a href=/Collezione/Main.php>Collezione</a></br>
+      <a href=Logout.php>Logout</a>
+    </div>
 
   </body>
 </html>

@@ -2,9 +2,9 @@
     function dbconnect(){
         $connection = pg_connect("host=localhost
                                     port=5432
-                                    dbname=ccodb
-                                    user=ltw
-                                    password=snap")
+                                    dbname=Progetto_db
+                                    user=postgres
+                                    password=220400")
         or die('Could not connect:' . pg_last_error());
         return $connection;
     }
