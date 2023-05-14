@@ -64,12 +64,11 @@ function colorAmount(){
 
 function buy(){
     if(enoughCurrency()){
-        req = '/PHP/newCard.php?user='+String(user);
-        $.get(req, function(data) {
-            //alert(data);
-            //$('#card-front').html(data);
-          });
-        buyAnim();
+        $("#new-cont").load("PHP/newCard.php?user="+String(user),
+        function(responseTxt, statusTxt, xhr){
+            if(statusTxt == "error") alert("Errore" + xhr.status + ":" + xhr.statusText);
+            else buyAnim();
+        });
     }
 }
 

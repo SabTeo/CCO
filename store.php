@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -41,13 +43,13 @@
         <div class="hov">
           <img id="giftIcon" src="Assets/gift.svg" height="20px" width="20"> 
           <?php require_once 'PHP/dbConnection.php'; require_once 'PHP/giftSystem.php';
+            $connection = dbconnect();
+            $username = $_SESSION['username'];
             $a = giftAvailable();
             //si
             if($a>=22){
-              $username = 'mat'; //ATTENZIONE il nome va preso da $session
-              $connection = dbconnect();
               $c = giftClaimed($connection, $username);
-              if(!$c) echo "<p class=\"giftNotice\">ecco il tuo regalo!$c</p>";
+              if(!$c) echo "<p class=\"giftNotice\">ecco il tuo regalo!</p>";
               else{
                 goto end;
               }
@@ -70,8 +72,6 @@
       <div class="amountContainer">
         <!--mostra cristalli posseduti da user memorizzato in sessione-->
         <?php require_once 'PHP/dbConnection.php';
-          $username = 'mat'; //ATTENZIONE il nome va preso da $session
-          $connection = dbconnect();
           $val = getValuta($connection, $username);
           echo"<p class=\"amount\" id=\"amountAv\">$val</p>";
           echo"<script>
@@ -88,26 +88,24 @@
       <div class="anim">
 
         <div class="anibox anihidden" id="anibox">
+   
+        <div class="card-container new-card-container" id="new-card-cont">
+          <div class='card flipped' id='card-new'>
+            <div class='card-front' id ='card-front'>
+              <div class='card-fill'>
+                <div class='card-content' id="new-cont">
 
-        <div class="card-container new-card-container">
-          <div class="card flipped" id="card-new">
-            <div class="card-front" id ="card-front">
-              <div class="card-fill">
-                <div class="card-content">
-                  <img src="Assets/Images/TrickTotem.png" class="previmg">
-                  <h4><b>Totem dell'inganno</b> <hr> </h4>
-                  <i>"ingannali tutti"</i>
-                  <p>La migliore carta di Hearthstone mai concepita da Blizzard Entertainment</p>
                 </div>
               </div>
-          </div>
-            <div class="card-back">
-              <img src="Assets/sapienza.jpg" 
-                class="back-image"
-                alt="sapienza logo">
+            </div>
+            <div class='card-back'>
+              <img src='Assets/sapienza.jpg' 
+                class='back-image'
+                alt='sapienza logo'>
             </div>
           </div>
-        </div>   
+        </div>
+  
         <button class="button invisible" id="end-button">OK</button>
 
         </div>

@@ -36,4 +36,5 @@ insert into carte(id, nomecarta, descrizione, rarita) values
 (2, 'Leeroy Jenkins', e'\"Alright chums, let\'s do this...\nLEEEROOOOOOYYYY\nmmmJEENKIIIIINS\"', 2),
 (3, 'Anakin Dripwalker', 'https://www.youtube.com/watch?v=ujFnkh4SwAI', 4),
 (4, 'Minilla', 'È proprio quello che sembra, il figlio brutto di Godzilla apparso nel celebre ottavo film della saga originale', 1)
+(5, e'Settra l\'Imperituro', 'Khemrikhara, Sommo Re di Nehekhara, Signore della Terra, Monarca dei Cieli, Governatore dei Quattro Orizzonti, Leone Possente del Deserto Infinito, Prescelto di Ptra, Sovrano Eterno delle Legioni di Khemri, Sentinella dei Due Regni, insomma avete capito', 1),
 ;

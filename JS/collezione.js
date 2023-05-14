@@ -8,7 +8,6 @@ function DisplayCollezione(e){
                         function(responseTxt, statusTxt, xhr){
                         if(statusTxt == "error")
                         alert("Errore" + xhr.status + ":" + xhr.statusText);
-    
                     });
     }
     else if(e=='nome'){

@@ -106,13 +106,15 @@ div.card-fill{
 /* CARD CONTENT */
 .card-fill .previmg{
     height: 50%;
+    flex-shrink: 0;
 }
 
 .card-fill h4{
     width: 100%;
     font-size: 19px;
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
+    flex-shrink: 1;
     /*font-family: 'Title';*/
 }
 
@@ -125,7 +127,8 @@ div.card-fill{
 
 .card-fill p{
     font-size: 15px;
-    margin: 10px
+    margin: 10px;
+    margin-top: 0px;
 }
 
 .card-fill a{
@@ -137,7 +140,7 @@ div.card-content-big{
     flex-grow: 1;
     border-radius: 10px;
     background-color: #a98a8f;
-    overflow: hidden;
+    overflow: scroll;
     margin: 7px;
     display: flex;
     align-items: center;

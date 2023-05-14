@@ -90,6 +90,11 @@ p.desc{
 div.new-card-container{
     margin-top: 15vh;
     position: relative;
+    pointer-events: all;
+}
+
+#new-cont{
+    overflow: scroll;
 }
 
 div.btn{
