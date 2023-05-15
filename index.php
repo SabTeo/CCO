@@ -4,7 +4,7 @@
                 $user = $_COOKIE['user'];
                 session_start();
                 $_SESSION['username']= $user;
-            header("Location: /main.php");
+                header("Location: /collezione.php");
         }
     } 
 ?>
