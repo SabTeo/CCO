@@ -32,7 +32,7 @@
 
     <div class="menu-bar">
       <div class="menu-item">
-        <div class="btn">
+        <div class="btn" onclick="window.location='/PHP/Logout.php';">
           <img id="profile" src="Assets/account.svg" height="30px" width="30"> </img>
           <h3>Utente</h3>
         </div>
@@ -53,20 +53,32 @@
             <div class="dropdown-content">
               <div id="default">ID</div>
               <div id="nome">Nome</div>
+              <div id="rarita">Rarità</div>
             </div>
         </div>
         <form class="check">
-            <input type="checkbox" id="checco">
+            <input type="checkbox" id="checco" >
             <label for="checco">Mostra non possedute</label>
         </form>
+        <div class="dropdown">
+            <button class="dropbtn">Ordine</button>
+            <div class="dropdown-content">
+              <div id="crescente">Crescente</div>
+              <div id="decrescente">Decrescente</div>
+            </div>
+        </div>
     </nav>
     <div class="central">
         <div id="zonaCarte"></div>
         <script>
             $(document).ready(function(){
-              DisplayCollezione("default"); 
+              DisplayCollezione("start"); 
+              controllacheck();
               $("#default").click(function(){DisplayCollezione('default')});
               $("#nome").click(function(){DisplayCollezione('nome')});
+              $("#rarita").click(function(){DisplayCollezione('rarita')});
+              $("#crescente").click(function(){cambiaordine('asc')});
+              $("#decrescente").click(function(){cambiaordine('desc')});
               $("#checco").click(function(){cambiastatocheck()});
             });
         </script>

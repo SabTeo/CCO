@@ -10,20 +10,22 @@
             if ($dbconn) {
                 $utente=$_SESSION['username'];
                 $rigafinale=$_POST['sort'];
-                $q1="select id,nomecarta,1 as posseduta 
+                $ordine=$_POST['order'];
+                $q1="select id,nomecarta,rarita,1 as posseduta 
                 from possiede join carte on(id=cardid) 
                 where username=$1 ";
                 if($_POST["check"]=="true"){
                     $q2="union 
-                    (select id,nomecarta,0 as posseduta     
+                    (select id,nomecarta,rarita,0 as posseduta     
                     from carte 
                     except 
-                    select id,nomecarta,0 as posseduta 
+                    select id,nomecarta,rarita,0 as posseduta 
                     from possiede join carte on(id=cardid) 
                     where username=$1) ";
                     $q1=$q1 . $q2;
                 }
                 $q1=$q1 . $rigafinale;
+                $q1=$q1 . $ordine;
 
                 $result = pg_query_params($dbconn, $q1,array($utente));
                 $tuple=pg_fetch_array($result, null, PGSQL_ASSOC);
