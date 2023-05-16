@@ -21,9 +21,8 @@
     $v = getValuta($connection, $username) - 100;
     pg_update($connection, 'users', array('valuta'=>$v), array('nome'=>$username));
     pg_insert($connection, 'possiede', array('username'=>$username, 'cardid'=>$newId));
-    echo"
-        <img src='Assets/Images/$newId.png' class='previmg'>
-        <h4><b>$nome</b> <hr> </h4>
-        <p>$desc</p>
-    ";
+    echo"   <img src='Assets/Images/$newId.png' class='previmg'>
+            <h4><b>$nome</b> <hr> </h4>";
+    if($tuple['rarita']==4)echo "<a href=$desc target=\"_blank\" rel=\"noopener noreferrer\">$desc</a>";
+    else echo "<p>$desc</p>";
 ?>

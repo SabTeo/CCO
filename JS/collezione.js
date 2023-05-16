@@ -33,6 +33,7 @@ function cambiastatocheck(){
 function showOverlay(){
     $('#overlay').toggleClass('hidden');
     $('#esc').toggleClass('hidden');
+    $('body').addClass('noScroll');
 }
 
 function flip(){

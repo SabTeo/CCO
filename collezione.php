@@ -4,7 +4,6 @@
     if(array_key_exists('user', $_COOKIE)){
             if(isset($_COOKIE['user'])){
                 $user = $_COOKIE['user'];
-               // session_start();
                 $_SESSION['username']= $user;
         }
     } 
@@ -16,8 +15,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Collezione</title>
-    <link rel="stylesheet" href="CSS/collezione.css"/>
     <link rel="stylesheet" href="CSS/main.css"/>
+    <link rel="stylesheet" href="CSS/collezione.css"/>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="JS/collezione.js"></script> 
 </head>
@@ -28,7 +27,8 @@
     </div>
     <img id=esc class="hidden" src="Assets/esc.svg" height="38px" width="38"
           onclick="$('#overlay').toggleClass('hidden');
-              $('#esc').toggleClass('hidden');">
+              $('#esc').toggleClass('hidden');
+              $('body').removeClass('noScroll');">
 
     <div class="menu-bar">
       <div class="menu-item">

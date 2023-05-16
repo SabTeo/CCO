@@ -145,7 +145,8 @@ div.card-content-big{
     display: flex;
     align-items: center;
     flex-direction: column;
-    box-shadow:-3px 0 #561722,
+    box-shadow:
+    -3px 0#561722,
     0 3px #561722,
     3px 0 #561722,
     0 -3px#561722;
@@ -222,6 +223,40 @@ div.card-container2{
     height: 160px;
 }
 
+/* stile carte a schermo ridotto ovunque*/
+@media screen and (max-width: 329px), screen and (max-height: 549px){
+
+    .card-fill .previmg{
+        height: 50%;
+        flex-shrink: 1;
+        min-height: 40%;
+    }
+
+    div.card-container{
+        width: 188px;
+        height: 240px;
+    }
+  
+    .card-fill h4{
+      font-size: 15px;
+      margin-top: 7px;
+      flex-shrink: 1;
+      padding: 0px;
+    }
+    
+    .card-fill p{
+      font-size: 13px;
+      margin: 10px;
+      margin-top: 0px;
+      margin-bottom: 3px;
+    }
+  
+    .card-fill a{
+      font-size: 13px;
+      margin: 0px;
+      margin-block: 0px;
+    }
+  }
 
 
 
