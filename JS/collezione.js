@@ -7,19 +7,22 @@ function DisplayCollezione(e){
             DisplayCollezione(sessionStorage.getItem("lastsort"));
             return;
         }
-        else{(DisplayCollezione('default'));}
+        else{
+            (DisplayCollezione('ID'));
+            return;
+        }
     }
     sessionStorage.setItem("lastsort",e);
     if(!sessionStorage.hasOwnProperty('order')){
         sessionStorage.setItem('order','asc');
     }
-    if(e=='default'){
+    if(e=='ID'){
         loadperdisplay('order by id ');
     }
-    else if(e=='nome'){
+    else if(e=='Nome'){
         loadperdisplay('order by nomecarta ');
     } 
-    else if(e=='rarita'){
+    else if(e=='Rarità'){
         loadperdisplay('order by rarita ');
     }  
 }
@@ -63,4 +66,17 @@ function showOverlay(){
 function flip(){
     //decommentare per far girare le carte nella collezione
     //$('#card-big').toggleClass('flipped');
+}
+
+function riempidropdown(){
+    const primodd=document.querySelector('#primodd');
+    const secondodd=document.querySelector('#secondodd');
+    console.log(primodd);
+    primodd.innerText=sessionStorage.getItem('lastsort');
+    if(sessionStorage.getItem('order')=='asc'){
+        secondodd.innerText='Crescente';
+    }
+    else if(sessionStorage.getItem('order')=='desc'){
+        secondodd.innerText='Decrescente';
+    }
 }
