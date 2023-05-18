@@ -46,24 +46,31 @@
       </div>
     </div>
     <nav class="options">
-      <div class="dropdown">
-        <button class="dropbtn">Ordina per</button>
-        <div class="dropdown-content">
-          <div id="default">ID</div>
-          <div id="nome">Nome</div>
-          <div id="rarita">Rarità</div>
+        <div class="dropdown">
+            <div class="dropbtn">
+              <span class="selected" id="primodd"></span>
+              <div class="triangolino"></div>
+            </div>
+            <ul class="dropdown-content">
+              <li class="active" id="default">ID</li>
+              <li id="nome">Nome</li>
+              <li id="rarita">Rarità</li>
+            </ul>
         </div>
-      </div>
-      <form class="check">
-          <input type="checkbox" id="checco" >
-          <label for="checco">Mostra non possedute</label>
-      </form>
-      <div class="dropdown">
-          <button class="dropbtn">Ordine</button>
-          <div class="dropdown-content">
-            <div id="crescente">Crescente</div>
-            <div id="decrescente">Decrescente</div>
-          </div>
+        <form class="check">
+            <input type="checkbox" id="checco" >
+            <label for="checco">Mostra non possedute</label>
+        </form>
+        <div class="dropdown" id="dd2">
+            <div class="dropbtn">
+              <span class="selected" id="secondodd"></span>
+              <div class="triangolino"></div>
+            </div>
+            <ul class="dropdown-content">
+              <li class="active" id="crescente">Crescente</li>
+              <li id="decrescente">Decrescente</li>
+            </ul>
+        </div>
       </div>
     </nav>
     <div class="central">
@@ -72,12 +79,14 @@
             $(document).ready(function(){
               DisplayCollezione("start"); 
               controllacheck();
-              $("#default").click(function(){DisplayCollezione('default')});
-              $("#nome").click(function(){DisplayCollezione('nome')});
-              $("#rarita").click(function(){DisplayCollezione('rarita')});
+              $("#default").click(function(){DisplayCollezione('ID')});
+              $("#nome").click(function(){DisplayCollezione('Nome')});
+              $("#rarita").click(function(){DisplayCollezione('Rarità')});
               $("#crescente").click(function(){cambiaordine('asc')});
               $("#decrescente").click(function(){cambiaordine('desc')});
               $("#checco").click(function(){cambiastatocheck()});
+              prova();
+              riempidropdown();
             });
         </script>
     </div>

@@ -26,6 +26,7 @@
                 }
                 $q1=$q1 . $rigafinale;
                 $q1=$q1 . $ordine;
+                $q1=$q1 . ',id';
 
                 $result = pg_query_params($dbconn, $q1,array($utente));
                 $tuple=pg_fetch_array($result, null, PGSQL_ASSOC);
