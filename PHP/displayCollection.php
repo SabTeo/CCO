@@ -38,8 +38,8 @@
                     if($id>5) $id = 'placeholder';
                     //
                     if($p==1){
-                        echo"<div class=\"preview\">
-                            <div class=\"card-container-prev\" id=\"$id\">  
+                        echo"<div class=\"preview\" id='cc's>
+                            <div class=\"card-container-prev initialpos\" id=\"$id\">  
                                 <div class=\"card-content\">";
 /*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">
                                 </div>
@@ -48,8 +48,8 @@
                     ";
                     }
                     else{
-                        echo"<div class=\"not-owned\">
-                        <div class=\"card-container-prev\" id=\"$id\"> 
+                        echo"<div class=\"not-owned\" id ='cc'>
+                        <div class=\"card-container-prev initialpos\" id=\"$id\"> 
                         <div class=\"shadow\"></div> 
                             <div class=\"card-content\">";
 /*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">

@@ -7,22 +7,17 @@ function DisplayCollezione(e){
             DisplayCollezione(sessionStorage.getItem("lastsort"));
             return;
         }
-        else{(DisplayCollezione('default'));}
+        else{
+            (DisplayCollezione('default'));
+            return
+        }
     }
     sessionStorage.setItem("lastsort",e);
     if(!sessionStorage.hasOwnProperty('order')){
         sessionStorage.setItem('order','asc');
     }
     if(e=='default'){
-<<<<<<< HEAD
-        $("#zonaCarte").load("PHP/displayCollection.php",{sort:'order by id',check: sessionStorage.getItem("check")},
-                        function(responseTxt, statusTxt, xhr){
-                        if(statusTxt == "error")
-                        alert("Errore" + xhr.status + ":" + xhr.statusText);
-                    });
-=======
         loadperdisplay('order by id ');
->>>>>>> 84e0ea54b71e0fbe98d3fbf14e66d168083311af
     }
     else if(e=='nome'){
         loadperdisplay('order by nomecarta ');
@@ -35,9 +30,8 @@ function DisplayCollezione(e){
 function loadperdisplay(e1){
             $("#zonaCarte").load("PHP/displayCollection.php",{sort:e1,check: sessionStorage.getItem("check"),order:sessionStorage.getItem('order')},
             function(responseTxt, statusTxt, xhr){
-            if(statusTxt == "error")
-            alert("Errore" + xhr.status + ":" + xhr.statusText);
-            });
+            if(statusTxt == "error") alert("Errore" + xhr.status + ":" + xhr.statusText);
+        });
 }
 
 function cambiaordine(e){

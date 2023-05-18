@@ -6,6 +6,10 @@
     $query = "SELECT id FROM carte EXCEPT SELECT cardid FROM possiede WHERE username=$1";
     $result = pg_query_params($connection, $query, array($username));
     $tuple=pg_fetch_array($result, null, PGSQL_ASSOC);
+    if($tuple==false){
+        echo'END';
+        return;
+    }
     while($tuple!=false){
         array_push($pool, $tuple['id']);
         $tuple=pg_fetch_array($result, null, PGSQL_ASSOC);

@@ -1,4 +1,15 @@
-<?php session_start(); ?>
+<?php
+  session_start();
+  if(!array_key_exists('username',$_SESSION)){
+    if(array_key_exists('user', $_COOKIE)){
+            if(isset($_COOKIE['user'])){
+                $user = $_COOKIE['user'];
+                $_SESSION['username']= $user;
+        }
+    } 
+  else{header("Location:/index.php");}
+  }
+?>
 
 <!DOCTYPE html>
 <html>
@@ -31,7 +42,7 @@
 
     <div class="menu-bar">
       <div class="menu-item">
-        <div class="btn" onclick="window.location='collezione.php';">
+        <div class="mbtn" onclick="window.location='collezione.php';">
           <img id="arrowBack" src="Assets/arrow_back.svg" height="30px" width="30"> </img>
           <h3>Collezione</h3>
         </div>

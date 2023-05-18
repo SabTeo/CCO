@@ -6,7 +6,7 @@ div.menu-bar{
     justify-content: left;
     padding-left: 0px;
 }
-.menu-item:first-child > .btn > h3{
+.menu-item:first-child > .mbtn > h3{
     margin-left: 5px;
     margin-right: 15px;
 }
@@ -55,7 +55,6 @@ p.amount{
     font-size: 25px;
     color: rgb(121, 49, 49);
     color: brown;
-    
 }
 
 button.button{
@@ -97,14 +96,14 @@ div.new-card-container{
     overflow: scroll;
 }
 
-div.btn{
+div.mbtn{
     display: flex;
     align-items: center;
     height: 100%;
     border-radius: 3px;
 }
 
-.btn:hover{
+.mbtn:hover{
     background-color: rgb(46, 62, 118);
     cursor: pointer;
 }
@@ -148,7 +147,7 @@ h2{
 }
 
 @media screen and (max-width: 569px), screen and (max-height: 464px){
-    .btn > h3{
+    .mbtn > h3{
         display: none;
     }
     p.giftNotice{
@@ -169,14 +168,6 @@ h2{
         height: 120px;
     }
 }
-
-/*@media screen and (max-width: 329px), screen and (max-height: 549px){
-    div.card-container{
-        width: 188px;
-        height: 240px;
-        margin-top: 10vh;
-    }
-} */
 
 @media screen and (max-height: 464px){
     div.menu-bar{

@@ -64,10 +64,18 @@ function colorAmount(){
 
 function buy(){
     if(enoughCurrency()){
-        $("#new-cont").load("PHP/newCard.php?user="+String(user),
+        $.get("PHP/newCard.php?user="+String(user),
+        //$("#new-cont").load("PHP/newCard.php?user="+String(user),
         function(responseTxt, statusTxt, xhr){
             if(statusTxt == "error") alert("Errore" + xhr.status + ":" + xhr.statusText);
-            else buyAnim();
+            else{
+                if(responseTxt=='END'){
+                    alert('complimenti hai finito la collezione');
+                    return;
+                }
+                $("#new-cont").html(responseTxt);
+                buyAnim();
+            }
         });
     }
 }
