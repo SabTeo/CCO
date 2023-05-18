@@ -63,6 +63,10 @@ function showOverlay(){
     $('body').addClass('noScroll');
 }
 
+function showDialog(){
+    MicroModal.show('modal-1');
+}
+
 function flip(){
     //decommentare per far girare le carte nella collezione
     //$('#card-big').toggleClass('flipped');

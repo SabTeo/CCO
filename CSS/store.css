@@ -122,6 +122,15 @@ div.hov{
     background-color: white;
     color: rgb(0, 0, 0);
     font-family:sans-serif;
+    display: flex;
+}
+
+.tippy-box[data-theme~='custom'] *{
+    margin: 0px;
+}
+
+.tooltipTimer{
+    display: none;
 }
 
 h2{
@@ -130,16 +139,18 @@ h2{
     margin:auto;
 }
 
-
 #end-button{
     margin-top: 5vh;
     z-index: 6; 
     transition: 1s;
 }
 
-@media screen and (max-width: 749px){
+@media screen and (max-width: 974px){
     p.giftNotice{
-        font-size: 13px;
+        font-size: 15px;
+    }
+    #tlabel{
+        display: none;
     }
     .tippy-box[data-theme~='custom']{
         font-size: 13px;
@@ -166,6 +177,9 @@ h2{
         margin-top: 16vh;
         width: 94px;
         height: 120px;
+    }
+    .tooltipTimer{
+        display: inline;
     }
 }
 

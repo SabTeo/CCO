@@ -13,12 +13,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Collezione</title>
-    <link rel="stylesheet" href="CSS/collezione.css"/>
-    <link rel="stylesheet" href="CSS/main.css"/>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="JS/collezione.js"></script>
+  <title>Carte Collezionabili Online - Collezione</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="Icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Icon/favicon-16x16.png">
+  <link rel="stylesheet" href="CSS/main.css">
+  <link rel="stylesheet" href="CSS/collezione.css">
+  <link rel="stylesheet" href="micromodal/micromodal.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="micromodal/micromodal.min.js"></script>
+  <script src="JS/collezione.js"></script>
 </head>
 <body>
     <div id='overlay' class="overlay hidden cover">
@@ -30,7 +36,7 @@
               $('body').removeClass('noScroll');">
     <div class="menu-bar">
       <div class="menu-item">
-        <div class="mbtn" onclick="window.location='/PHP/Logout.php';">
+        <div class="mbtn" onclick="showDialog();">
           <img id="profile" src="Assets/account.svg" height="30px" width="30"> </img>
           <h3>Utente</h3>
         </div>
@@ -91,5 +97,32 @@
         </script>
     </div>
 
+  <!--modal-->
+  <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <header class="modal__header">
+          <p class="modal__title" id="modal-1-title">
+            Utente
+          </p>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+            <img class="modal__esc" src="Assets/escb.svg"></img>
+          </button>
+        </header>
+        <main class="modal__content" id="modal-1-content">
+          <p>   
+            <?php $user = $_SESSION['username'];
+            echo"Hai effettuato il login come $user";?>
+          </p>
+        </main>
+        <footer class="modal__footer">
+          <button class="modal__btn modal__btn-primary" 
+                  onclick="sessionStorage.clear(); window.location='/PHP/logout.php';"
+                  >Logout</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+      
 </body>
 </html>

@@ -24,9 +24,11 @@
   <link rel="stylesheet" href="CSS/main.css">
   <link rel="stylesheet" href="CSS/store.css">
   <link rel="stylesheet" href="CSS/storeAnimation.css">
+  <link rel="stylesheet" href="micromodal/micromodal.css">
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="https://unpkg.com/tippy.js@6"></script>
   <script src="JS/jquery-min.js"></script>
+  <script src="micromodal/micromodal.min.js"></script>
   <script src="JS/storeFunctions.js"></script>
   
 </head>
@@ -39,6 +41,11 @@
     <div class="banner banner2 hidden" id="b2"></div>
     <div class="banner banner3 hidden" id="b3"></div>
     <div class="horizontal-banner" id="horizontal"></div>
+
+    <div class="gift-tooltip" style="display:none">
+      Visita il negozio ogni giorno tra le 15 e le 18 per ricevere un bonus giornaliero di 100 cristalli
+      <p class="tooltipTimer"></p>
+    </div>
 
     <div class="menu-bar">
       <div class="menu-item">
@@ -60,19 +67,16 @@
             //si
             if($a>=22){
               $c = giftClaimed($connection, $username);
-              if(!$c) echo "<p class=\"giftNotice\">ecco il tuo regalo!</p>";
-              else{
-                goto end;
+              if(!$c){
+                echo "<p class=\"giftNotice\">Ricompensa riscattata!</p>";
+                return;
               }
             }
             //no
-            else{
-              end:
-              if($a!=1){
-                echo "<p class=\"giftNotice\">disponibile tra: $a ore!</p>";
-              }
-              else echo "<p class=\"giftNotice\">disponibile tra: $a ora!</p>";
-            }
+            //if($a!=1) echo "<p class=\"giftNotice\">disponibile tra: $a ore!</p>";
+            //else echo "<p class=\"giftNotice\">disponibile tra: $a ora!</p>";
+            echo "<p id=\"tlabel\" class=\"giftNotice\">Disponibile tra</p><p id=\"timer\" class=\"giftNotice\"></p>";
+            echo "<script> displayTimer() </script>";
           ?>
         </div>
       </div>
@@ -95,17 +99,14 @@
       <button class="button" onclick="buy()" id="buy-button">Acquista</button>
       <p class="desc">Ogni pacchetto contiene una carta casuale non posseduta</p>
     </div>
-      <!--chiamata ajax per la nuova carta e aggiornamento db-->
-      <div class="anim">
-
-        <div class="anibox anihidden" id="anibox">
-   
+      <!--nuova carta riempita da chiamata ajax-->
+    <div class="anim">
+      <div class="anibox anihidden" id="anibox">
         <div class="card-container new-card-container" id="new-card-cont">
           <div class='card flipped' id='card-new'>
             <div class='card-front' id ='card-front'>
               <div class='card-fill'>
                 <div class='card-content' id="new-cont">
-
                 </div>
               </div>
             </div>
@@ -116,14 +117,34 @@
             </div>
           </div>
         </div>
-  
         <button class="button invisible" id="end-button">OK</button>
-
-        </div>
-
       </div>
-
-
+    </div>
+  </div>
+    <!--modal-->
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <header class="modal__header">
+          <p class="modal__title" id="modal-1-title">
+            Utente
+          </p>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+            <img class="modal__esc" src="Assets/escb.svg"></img>
+          </button>
+        </header>
+        <main class="modal__content" id="modal-1-content">
+          <p>   
+            Complimenti! hai finito la collezione
+          </p>
+        </main>
+        <footer class="modal__footer">
+          <button class="modal__btn modal__btn-primary" 
+                  onclick="window.location='collezione.php';"
+                  >ok</button>
+        </footer>
+      </div>
+    </div>
   </div>
 </body>
 </html>
