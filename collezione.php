@@ -51,6 +51,7 @@
         </div>
       </div>
     </div>
+    <!--
     <nav class="options">
         <div class="dropdown">
             <div class="dropbtn">
@@ -78,7 +79,7 @@
             </ul>
         </div>
       </div>
-    </nav>
+    </nav>-->
     <div class="central">
         <div id="zonaCarte"></div>
         <script>

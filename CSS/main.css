@@ -132,8 +132,11 @@ div.card-fill{
 }
 
 .card-fill a{
+    display: block;
     font-size: 15px;
-    margin: 10px
+    margin: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 div.card-content-big{
@@ -151,6 +154,10 @@ div.card-content-big{
     3px 0 #561722,
     0 -3px#561722;
 }
+
+div.card-content-big::-webkit-scrollbar {
+    display: none;
+  }
 
 /* PREVIEW SIZE CARD */
 div.card-container-prev{
@@ -208,6 +215,10 @@ div.card-content{
     flex-direction: column;
 }
 
+div.card-content::-webkit-scrollbar {
+    display: none;
+  }
+
 /* PROVE */
 div.prova{
     width: 100%;
@@ -237,23 +248,21 @@ div.card-container2{
     }
   
     .card-fill h4{
-      font-size: 15px;
-      margin-top: 7px;
-      flex-shrink: 1;
-      padding: 0px;
+        font-size: 15px;
+        margin-top: 7px;
+        flex-shrink: 1;
+        padding: 0px;
     }
     
     .card-fill p{
-      font-size: 13px;
-      margin: 10px;
-      margin-top: 0px;
-      margin-bottom: 3px;
+        font-size: 13px;
+        margin: 10px;
+        margin-top: 0px;
+        margin-bottom: 3px;
     }
   
     .card-fill a{
-      font-size: 13px;
-      margin: 0px;
-      margin-block: 0px;
+        font-size: 13px;
     }
   }
 
