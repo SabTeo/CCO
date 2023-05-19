@@ -51,7 +51,6 @@
         </div>
       </div>
     </div>
-    <!--
     <nav class="options">
         <div class="dropdown">
             <div class="dropbtn">
@@ -79,7 +78,7 @@
             </ul>
         </div>
       </div>
-    </nav>-->
+    </nav>
     <div class="central">
         <div id="zonaCarte"></div>
         <script>
@@ -117,7 +116,7 @@
           </p>
         </main>
         <footer class="modal__footer">
-          <button class="modal__btn modal__btn-primary" 
+          <button class="modal__btn" 
                   onclick="sessionStorage.clear(); window.location='/PHP/logout.php';"
                   >Logout</button>
         </footer>

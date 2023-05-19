@@ -126,22 +126,18 @@
     <div class="modal__overlay" tabindex="-1" data-micromodal-close>
       <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
         <header class="modal__header">
-          <p class="modal__title" id="modal-1-title">
-            Utente
-          </p>
+          <p class="modal__title" id="modal-1-title">Avviso</p>
           <button class="modal__close" aria-label="Close modal" data-micromodal-close>
             <img class="modal__esc" src="Assets/escb.svg"></img>
           </button>
         </header>
         <main class="modal__content" id="modal-1-content">
-          <p>   
-            Complimenti! hai finito la collezione
-          </p>
+          <p>Complimenti! hai finito la collezione</p>
         </main>
         <footer class="modal__footer">
-          <button class="modal__btn modal__btn-primary" 
+          <button class="modal__btn" 
                   onclick="window.location='collezione.php';"
-                  >ok</button>
+                  >Ok</button>
         </footer>
       </div>
     </div>
