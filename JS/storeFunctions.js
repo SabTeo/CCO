@@ -42,6 +42,31 @@ function buyAnim(){
     }, 2200);
 }
 
+function displayTimer(){
+    calculateTimer();
+    setInterval(calculateTimer, 60000);
+}
+
+function calculateTimer(){
+    hour = 15;
+    today = new Date();
+    nextAv = new Date(today.getFullYear(), today.getMonth(), today.getDate(), hour)
+    //se l'ora di oggi è gia passata allora passo a domani
+    if(!(today<nextAv)) nextAv = new Date(today.getFullYear(), today.getMonth(), today.getDate()+1, hour);
+    //console.log(String(nextAv));
+    msLeft = nextAv - today;
+    msInHour = 3600000;
+    msInMinute = 60000;
+    hLeft = Math.floor(msLeft/msInHour);
+    minLeft = Math.ceil((msLeft%msInHour)/msInMinute);
+    if(hLeft==0 && minLeft==0){
+        winbdow.location.reload();
+    }
+    plural = (hLeft==1)?' ora e ':' ore e '
+    $('#timer').html(String(hLeft)+plural+String(minLeft)+' minuti');
+    $('.tooltipTimer').html('(disponibile tra: '+ String(hLeft)+' ore e '+String(minLeft)+' minuti)');
+}
+
 // ATTEZIONE var valuta e var user inizializzate in php
 var valuta;
 var user;
@@ -64,12 +89,20 @@ function colorAmount(){
 
 function buy(){
     if(enoughCurrency()){
-        req = '/PHP/newCard.php?user='+String(user);
-        $.get(req, function(data) {
-            //alert(data);
-            //$('#card-front').html(data);
-          });
-        buyAnim();
+        $.get("PHP/newCard.php?user="+String(user),
+        //$("#new-cont").load("PHP/newCard.php?user="+String(user),
+        function(responseTxt, statusTxt, xhr){
+            if(statusTxt == "error") alert("Errore" + xhr.status + ":" + xhr.statusText);
+            else{
+                if(responseTxt=='END'){
+                    //alert('complimenti hai finito la collezione');
+                    MicroModal.show('modal-1');
+                    return;
+                }
+                $("#new-cont").html(responseTxt);
+                buyAnim();
+            }
+        });
     }
 }
 
@@ -78,7 +111,8 @@ function update(){
     tippy('.hov',{
         theme:'custom',
         arrow:'',
-        content:"Visita il negozio ogni giorno tra le 15 e le 18 per ricevere un bonus giornaliero di 100 cristalli"
+        content:$('.gift-tooltip').html(),
+        allowHTML: true,
     });
 }
 

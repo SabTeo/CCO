@@ -26,6 +26,7 @@
                 }
                 $q1=$q1 . $rigafinale;
                 $q1=$q1 . $ordine;
+                $q1=$q1 . ',id';
 
                 $result = pg_query_params($dbconn, $q1,array($utente));
                 $tuple=pg_fetch_array($result, null, PGSQL_ASSOC);
@@ -35,11 +36,15 @@
                     $id=$tuple['id'];
                     $p=$tuple['posseduta'];
                     //DEBUG TOGLIERE// 
+<<<<<<< HEAD
                     //if($id>4) $id = '12';
+=======
+                    if($id>5) $id = 'placeholder';
+>>>>>>> 8098f84ec62ca85429474860ff0eec022b8148d4
                     //
                     if($p==1){
-                        echo"<div class=\"preview\">
-                            <div class=\"card-container-prev\" id=\"$id\">  
+                        echo"<div class=\"preview\" id='cc's>
+                            <div class=\"card-container-prev initialpos\" id=\"$id\">  
                                 <div class=\"card-content\">";
 /*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">
                                 </div>
@@ -48,8 +53,8 @@
                     ";
                     }
                     else{
-                        echo"<div class=\"not-owned\">
-                        <div class=\"card-container-prev\" id=\"$id\"> 
+                        echo"<div class=\"not-owned\" id ='cc'>
+                        <div class=\"card-container-prev initialpos\" id=\"$id\"> 
                         <div class=\"shadow\"></div> 
                             <div class=\"card-content\">";
 /*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">

@@ -50,7 +50,6 @@
             <div class="card-content-big">
               <img src="Assets/Images/TrickTotem.png" class="previmg">
               <h4>Totem dell'inganno <hr> </h4>
-              <i>"ingannali tutti"</i>
               <p>La migliore carta di Hearthstone mai concepita da Blizzard Entertainment</p>
             </div>
           </div>

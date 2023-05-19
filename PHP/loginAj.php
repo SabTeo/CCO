@@ -25,7 +25,6 @@
             else {
                 session_start();
                 $_SESSION['username']=$user;
-                //$remember=$_POST['remember'];
                 //ricordami
                 if(array_key_exists('remember', $_POST)){
                         setcookie('user', $user, time()+3600*24*7, "/");
@@ -34,12 +33,7 @@
                         return;
                 }
             }
-                /*else {
-                    setcookie('user',$user,3);
-                    setcookie('password',$password,3);
-                }*/
                 echo "LOGIN_SUCCESSFUL";
-                //header("Location:../main.php");
         }
     }
 ?>

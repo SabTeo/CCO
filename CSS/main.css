@@ -37,7 +37,7 @@ div.menu-bar{
     display: flex;
     width: 100%;
     background-color: rgb(23, 23, 81);
-    color: antiquewhite;
+    color: white;
 }
 
 div.menu-item {
@@ -106,13 +106,15 @@ div.card-fill{
 /* CARD CONTENT */
 .card-fill .previmg{
     height: 50%;
+    flex-shrink: 0;
 }
 
 .card-fill h4{
     width: 100%;
     font-size: 19px;
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
+    flex-shrink: 1;
     /*font-family: 'Title';*/
 }
 
@@ -125,28 +127,37 @@ div.card-fill{
 
 .card-fill p{
     font-size: 15px;
-    margin: 10px
+    margin: 10px;
+    margin-top: 0px;
 }
 
 .card-fill a{
+    display: block;
     font-size: 15px;
-    margin: 10px
+    margin: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 div.card-content-big{
     flex-grow: 1;
     border-radius: 10px;
     background-color: #a98a8f;
-    overflow: hidden;
+    overflow: scroll;
     margin: 7px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    box-shadow:-3px 0 #561722,
+    box-shadow:
+    -3px 0#561722,
     0 3px #561722,
     3px 0 #561722,
     0 -3px#561722;
 }
+
+div.card-content-big::-webkit-scrollbar {
+    display: none;
+  }
 
 /* PREVIEW SIZE CARD */
 div.card-container-prev{
@@ -155,7 +166,7 @@ div.card-container-prev{
     height: 192px;
     background-color: #822434;
     border-radius: 10px;
-    transition: 0.8s;
+    transition: 0.8s all;
 }
 
 .card-container-prev:hover{
@@ -187,7 +198,6 @@ div.shadow{
     background-color: rgb(0, 0, 0, 0.8);
 }
 
-
 img.previmg{
     width: 100%;
     height: 100%;
@@ -205,6 +215,10 @@ div.card-content{
     flex-direction: column;
 }
 
+div.card-content::-webkit-scrollbar {
+    display: none;
+  }
+
 /* PROVE */
 div.prova{
     width: 100%;
@@ -219,6 +233,38 @@ div.card-container2{
     height: 160px;
 }
 
+/* stile carte a schermo ridotto ovunque*/
+@media screen and (max-width: 329px), screen and (max-height: 549px){
+
+    .card-fill .previmg{
+        height: 50%;
+        flex-shrink: 1;
+        min-height: 40%;
+    }
+
+    div.card-container{
+        width: 188px;
+        height: 240px;
+    }
+  
+    .card-fill h4{
+        font-size: 15px;
+        margin-top: 7px;
+        flex-shrink: 1;
+        padding: 0px;
+    }
+    
+    .card-fill p{
+        font-size: 13px;
+        margin: 10px;
+        margin-top: 0px;
+        margin-bottom: 3px;
+    }
+  
+    .card-fill a{
+        font-size: 13px;
+    }
+  }
 
 
 

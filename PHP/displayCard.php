@@ -15,9 +15,6 @@
                 $nome=$tuple['nomecarta'];
                 $desc=$tuple['descrizione'];
                 $rar=$tuple['rarita'];
-                //echo"<h1>$id<h1>";
-                //echo"<h1>$nome<h1>";
-                //echo"<div>$desc</div>";
                 echo"
                 <div class=\"card-container\" id=$id onclick=\"flip()\">
                   <div class=\"card\" id=\"card-big\">
