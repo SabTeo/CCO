@@ -52,20 +52,23 @@ div.central{
   width: 100%;
 }
 
-nav.options{
+#menu2{
   display: flex;
   align-items: center;
-  padding-block: 10px;
+  /*padding-block: 10px;
   padding-left: 30px;
-  padding-right:30px;
+  padding-right:30px;*/
   background-color: rgba(1, 57, 135, 0.25);
   opacity: 100%;
 }
 
 form.check{
   position:relative;
-  left: 400px;
   color: white;
+}
+#checco{
+  position:relative;
+  left:80px;
 }
 
 #zonaCarte{
@@ -127,8 +130,11 @@ div.card-container{
   min-width:10em;
   position:relative;
 }
+#dd1{
+  left:20px;
+}
 #dd2{
-  left: 750px;
+  right:20px;
 }
 .dropdown * {
   box-sizing: border-box;
@@ -221,6 +227,9 @@ div.card-container-prev.initialpos{
   .mbtn > h3{
       display: none;
   }
+  /*#labelcheckbox{
+    display:none;
+  }*/
   #profile{
       margin-right: 15px;
   }
@@ -245,8 +254,33 @@ div.card-container-prev.initialpos{
   }
 }
 
-/*responsiveness nav bar*/
-@media (max-width:700px){
+@media (min-width:400px)and (max-width:540px){
+  #checco{
+    left:70px;
+  }
+  #labelcheckbox{
+    position:relative;
+    left:35px;
+  }
+  #dd1{
+    left:10px;
+  }
   #dd2{
-    left:50px;}
-}  
+    right:10px;
+  }
+}
+@media (max-width:450px){
+  #checco{
+    left:54px;
+  }
+  #labelcheckbox{
+    position:relative;
+    left:20px;
+  }
+  #dd1{
+    left:10px;
+  }
+  #dd2{
+    right:10px;
+  }
+}

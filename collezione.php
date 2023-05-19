@@ -51,8 +51,9 @@
         </div>
       </div>
     </div>
-    <nav class="options">
-        <div class="dropdown">
+    <div class="menu-bar" id="menu2">
+      <div class="menu-item">
+        <div class="dropdown" id="dd1">
             <div class="dropbtn">
               <span class="selected" id="primodd"></span>
               <div class="triangolino"></div>
@@ -63,10 +64,14 @@
               <li id="rarita">Rarità</li>
             </ul>
         </div>
+      </div>
+      <div class="menu-item">
         <form class="check">
-            <input type="checkbox" id="checco" >
-            <label for="checco">Mostra non possedute</label>
+            <input type="checkbox" id="checco" ></br>
+            <label for="checco" id="labelcheckbox">Mostra non possedute</label>
         </form>
+      </div>
+      <div class="menu-item">
         <div class="dropdown" id="dd2">
             <div class="dropbtn">
               <span class="selected" id="secondodd"></span>
@@ -78,7 +83,7 @@
             </ul>
         </div>
       </div>
-    </nav>
+    </div>
     <div class="central">
         <div id="zonaCarte"></div>
         <script>

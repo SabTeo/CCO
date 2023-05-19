@@ -36,11 +36,7 @@
                     $id=$tuple['id'];
                     $p=$tuple['posseduta'];
                     //DEBUG TOGLIERE// 
-<<<<<<< HEAD
                     //if($id>4) $id = '12';
-=======
-                    if($id>5) $id = 'placeholder';
->>>>>>> 8098f84ec62ca85429474860ff0eec022b8148d4
                     //
                     if($p==1){
                         echo"<div class=\"preview\" id='cc's>
