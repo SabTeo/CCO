@@ -30,6 +30,7 @@
 
                 $result = pg_query_params($dbconn, $q1,array($utente));
                 $tuple=pg_fetch_array($result, null, PGSQL_ASSOC);
+                $i=1;
                 echo"<div class=\"grid-cont\">";
                 while($tuple!=false){
                     $nome=$tuple['nomecarta'];
@@ -40,7 +41,7 @@
                     //
                     if($p==1){
                         echo"<div class=\"preview\" id='cc's>
-                            <div class=\"card-container-prev initialpos\" id=\"$id\">  
+                            <div class=\"card-container-prev initialpos\" id=\"$id\" data-position=\"$i\">  
                                 <div class=\"card-content\">";
 /*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">
                                 </div>
@@ -50,7 +51,7 @@
                     }
                     else{
                         echo"<div class=\"not-owned\" id ='cc'>
-                        <div class=\"card-container-prev initialpos\" id=\"$id\"> 
+                        <div class=\"card-container-prev initialpos\" id=\"$id\" data-position=\"$i\"> 
                         <div class=\"shadow\"></div> 
                             <div class=\"card-content\">";
 /*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">
@@ -60,6 +61,7 @@
                     ";
                     }
                 $tuple=pg_fetch_array($result, null, PGSQL_ASSOC); 
+                $i=$i + 1;
                 }
                 echo"<script>$(document).ready(function(){
                     $(\".card-container-prev\").click(function(){
@@ -68,6 +70,7 @@
                             if(statusTxt == \"error\")
                                 alert(\"Errore\" + xhr.status + \":\" + xhr.statusText);
                         });
+                        console.log(this.dataset.position);
                         showOverlay();
                     });
                 });</script>";
