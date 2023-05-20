@@ -32,8 +32,9 @@
     </div>
     <img id=esc class="hidden" src="Assets/esc.svg" height="38px" width="38"
           onclick="hideOverlay();">
-    <img id=nextL class="hidden" src="Assets/arrow_back.svg" height="38px" width="38" onclick="loadNext('L');">
-    <img id=nextR class="hidden" src="Assets/arrow_back.svg" height="38px" width="38" onclick="loadNext('R');">
+    <img id=nextL class="hidden" src="Assets/chevron_left.svg" height="38px" width="38" onclick="loadNext('L');">
+    <img id=nextR class="hidden" src="Assets/chevron_left.svg" height="38px" width="38" onclick="loadNext('R');"
+          style="transform: rotate(180deg)">
     <div class="menu-bar">
       <div class="menu-item">
         <div class="mbtn" onclick="showDialog();">
@@ -53,22 +54,23 @@
     </div>
     <div class="menu-bar" id="menu2">
       <div class="menu-item">
+        <p id="orderLabel">Ordina per:</p>
         <div class="dropdown" id="dd1">
             <div class="dropbtn">
               <span class="selected" id="primodd"></span>
               <div class="triangolino"></div>
             </div>
             <ul class="dropdown-content">
-              <li class="active" id="default">ID</li>
-              <li id="nome">Nome</li>
-              <li id="rarita">Rarità</li>
+              <li class="active" id="default">id</li>
+              <li id="nome">nome</li>
+              <li id="rarita">rarità</li>
             </ul>
         </div>
       </div>
       <div class="menu-item">
         <form class="check">
-            <input type="checkbox" id="checco" ></br>
             <label for="checco" id="labelcheckbox">Mostra non possedute</label>
+            <input type="checkbox" id="checco" ></br>
         </form>
       </div>
       <div class="menu-item">
@@ -78,8 +80,12 @@
               <div class="triangolino"></div>
             </div>
             <ul class="dropdown-content">
-              <li class="active" id="crescente">Crescente</li>
-              <li id="decrescente">Decrescente</li>
+              <li class="active" id="crescente">
+              <img src="Assets/sort-desc.svg" class="sortIcon" style="transform: rotate(180deg)"></img>
+              </li>
+              <li id="decrescente">
+              <img src="Assets/sort-desc.svg" class="sortIcon"></img>
+              </li>
             </ul>
         </div>
       </div>

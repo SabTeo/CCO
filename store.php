@@ -64,7 +64,6 @@
             $connection = dbconnect();
             $username = $_SESSION['username'];
             $a = giftAvailable();
-            //si
             if($a>=22){
               $c = giftClaimed($connection, $username);
               if(!$c){
@@ -72,9 +71,6 @@
                 return;
               }
             }
-            //no
-            //if($a!=1) echo "<p class=\"giftNotice\">disponibile tra: $a ore!</p>";
-            //else echo "<p class=\"giftNotice\">disponibile tra: $a ora!</p>";
             echo "<p id=\"tlabel\" class=\"giftNotice\">Disponibile tra</p><p id=\"timer\" class=\"giftNotice\"></p>";
             echo "<script> displayTimer() </script>";
           ?>
@@ -106,7 +102,7 @@
           <div class='card flipped' id='card-new'>
             <div class='card-front' id ='card-front'>
               <div class='card-fill'>
-                <div class='card-content' id="new-cont">
+                <div class='card-content-big' id="new-cont">
                 </div>
               </div>
             </div>

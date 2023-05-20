@@ -31,6 +31,7 @@
                 $result = pg_query_params($dbconn, $q1,array($utente));
                 $tuple=pg_fetch_array($result, null, PGSQL_ASSOC);
                 $pos = 0;
+                $queue = 0;
                 echo"<div class=\"grid-cont\">";
                 while($tuple!=false){
                     $nome=$tuple['nomecarta'];
@@ -38,7 +39,8 @@
                     $p=$tuple['posseduta'];
                     if($p==1){
                         echo"<div class=\"preview\" id='cc's>
-                            <div class=\"card-container-prev initialpos\" id=\"$id\" data-position=\"$pos\">  
+                            <div class=\"card-container-prev initialpos\" id=\"$id\"
+                                data-position=\"$pos\" data-queue=\"$queue\">  
                                 <div class=\"card-content\">";
 /*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">
                                 </div>
@@ -48,8 +50,8 @@
                     $pos++;
                     }
                     else{
-                        echo"<div class=\"not-owned\" id ='cc'>
-                        <div class=\"card-container-prev initialpos\" id=\"$id\"> 
+                        echo"<div class=\"preview\" id ='cc'>
+                        <div class=\"card-container-prev initialpos\" id=\"$id\" data-queue=\"$queue\"> 
                         <div class=\"shadow\"></div> 
                             <div class=\"card-content\">";
 /*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">
@@ -58,16 +60,19 @@
                     </div>
                     ";
                     }
-                $tuple=pg_fetch_array($result, null, PGSQL_ASSOC); 
+                $tuple=pg_fetch_array($result, null, PGSQL_ASSOC);
+                $queue++;
                 }
                 echo"<script>
                 setMaxIndex($pos-1);
+                setMaxQueue($queue-1);
                 $(document).ready(function(){
                     $(\".card-container-prev\").click(function(){
                         setIndex(this.dataset.position);
                         loadCarta(this.id);
                     });
                 });
+                displayAnim(-1);
                 </script>";
                 echo"</div>";
             }

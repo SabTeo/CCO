@@ -117,13 +117,14 @@ function flip(){
 function riempidropdown(){
     const primodd=document.querySelector('#primodd');
     const secondodd=document.querySelector('#secondodd');
-    //console.log(primodd);
-    primodd.innerText=sessionStorage.getItem('lastsort');
+    primodd.innerText=sessionStorage.getItem('lastsort').toLowerCase();
     if(sessionStorage.getItem('order')=='asc'){
-        secondodd.innerText='Crescente';
+        //secondodd.innerText='crescente';
+        secondodd.innerHTML='<img src="Assets/sort-desc.svg" class="sortIcon" style="transform: rotate(180deg)"></img>';
     }
     else if(sessionStorage.getItem('order')=='desc'){
-        secondodd.innerText='Decrescente';
+        //secondodd.innerText='decrescente';
+        secondodd.innerHTML='<img src="Assets/sort-desc.svg" class="sortIcon"></img>';
     }
 }
 
@@ -155,4 +156,19 @@ function prova(){
             });
         });
     });
+}
+//ATTENZIONE funzione chiamata da php
+//indice dell'ultima carta in coda per l'animazione
+var maxQueue;
+
+function setMaxQueue(n){
+    maxQueue = n;
+}
+
+function displayAnim(i){  
+    console.log(maxQueue);
+        if(i>maxQueue) return; 
+        $('[data-queue='+i+']').removeClass('initialpos');
+        setTimeout(()=>{displayAnim(i+1)}, 30);
+        //setTimeout(()=>{$('.initialpos').removeClass('initialpos')}, 75);
 }
