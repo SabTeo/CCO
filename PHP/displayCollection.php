@@ -30,23 +30,22 @@
 
                 $result = pg_query_params($dbconn, $q1,array($utente));
                 $tuple=pg_fetch_array($result, null, PGSQL_ASSOC);
+                $pos = 0;
                 echo"<div class=\"grid-cont\">";
                 while($tuple!=false){
                     $nome=$tuple['nomecarta'];
                     $id=$tuple['id'];
                     $p=$tuple['posseduta'];
-                    //DEBUG TOGLIERE// 
-                    //if($id>4) $id = '12';
-                    //
                     if($p==1){
                         echo"<div class=\"preview\" id='cc's>
-                            <div class=\"card-container-prev initialpos\" id=\"$id\">  
+                            <div class=\"card-container-prev initialpos\" id=\"$id\" data-position=\"$pos\">  
                                 <div class=\"card-content\">";
 /*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">
                                 </div>
                             </div>
                         </div>
                     ";
+                    $pos++;
                     }
                     else{
                         echo"<div class=\"not-owned\" id ='cc'>
@@ -61,16 +60,15 @@
                     }
                 $tuple=pg_fetch_array($result, null, PGSQL_ASSOC); 
                 }
-                echo"<script>$(document).ready(function(){
+                echo"<script>
+                setMaxIndex($pos-1);
+                $(document).ready(function(){
                     $(\".card-container-prev\").click(function(){
-                        $(\"#zonaDisplay\").load(\"PHP/displayCard.php\",{id:this.id},
-                        function(responseTxt, statusTxt, xhr){
-                            if(statusTxt == \"error\")
-                                alert(\"Errore\" + xhr.status + \":\" + xhr.statusText);
-                        });
-                        showOverlay();
+                        setIndex(this.dataset.position);
+                        loadCarta(this.id);
                     });
-                });</script>";
+                });
+                </script>";
                 echo"</div>";
             }
         ?> 

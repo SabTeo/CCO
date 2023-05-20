@@ -34,6 +34,15 @@ function loadperdisplay(e1){
         });
 }
 
+//assume che id sia string
+function loadCarta(id){
+    $('#zonaDisplay').load('PHP/displayCard.php',{id:id},
+    function(responseTxt, statusTxt, xhr){
+        if(statusTxt == 'error') alert('Errore' + xhr.status + ':' + xhr.statusText);
+        showOverlay();
+    });
+}
+
 function cambiaordine(e){
     sessionStorage.setItem('order',e);
     DisplayCollezione(sessionStorage.getItem("lastsort"));
@@ -57,10 +66,43 @@ function controllacheck(){
         }
     }
 }
+
+//ATTENZIONE funzioni chiamate da php
+//indici posizionali dell'ultima carta in display e della carta in ultima posizione
+var currentIndex;
+var maxIndex
+
+function setIndex(n){
+    currentIndex = n;
+}
+
+function setMaxIndex(m){
+    maxIndex = m;
+}
+
 function showOverlay(){
-    $('#overlay').toggleClass('hidden');
-    $('#esc').toggleClass('hidden');
+    $('#overlay').removeClass('hidden');
+    $('#esc').removeClass('hidden');
+    $('#nextL').removeClass('hidden');
+    $('#nextR').removeClass('hidden');
     $('body').addClass('noScroll');
+    if(currentIndex==0) $('#nextL').addClass('hidden');
+    if(currentIndex==maxIndex) $('#nextR').addClass('hidden');
+}
+
+function hideOverlay(){
+    $('#overlay').addClass('hidden');
+    $('#esc').addClass('hidden');
+    $('#nextL').addClass('hidden');
+    $('#nextR').addClass('hidden');
+    $('body').removeClass('noScroll');
+}
+
+function loadNext(direction){
+    if(direction=='R') nextIndex = parseInt(++currentIndex);   
+    else nextIndex = parseInt(--currentIndex);
+    nextId = $('[data-position='+String(nextIndex)+']').attr('id');
+    loadCarta(String(nextId));
 }
 
 function showDialog(){
@@ -75,7 +117,7 @@ function flip(){
 function riempidropdown(){
     const primodd=document.querySelector('#primodd');
     const secondodd=document.querySelector('#secondodd');
-    console.log(primodd);
+    //console.log(primodd);
     primodd.innerText=sessionStorage.getItem('lastsort');
     if(sessionStorage.getItem('order')=='asc'){
         secondodd.innerText='Crescente';
@@ -101,8 +143,8 @@ function prova(){
         options.forEach(option =>{
             option.addEventListener('click',() =>{
                 selected.innerText=option.innerText;
-                console.log(selected.innerText);
-                console.log(option.innerText);
+                //console.log(selected.innerText);
+                //console.log(option.innerText);
                 /*select.classList.remove('select-clicked');*/
                 triangolo.classList.remove('triangolino-rotate');
                 menu.classList.remove('menu-open');

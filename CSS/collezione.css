@@ -193,10 +193,6 @@ div.card-container{
   opacity:1;
 }
 
-/*.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #4f94ee;}*/
-
 button.dropbtn {
   background-color: #04AA6D;
   color: white;
@@ -204,7 +200,6 @@ button.dropbtn {
   font-size: 16px;
   border: none;
 }
-
 
 div.grid-cont{
   margin-left: auto;
@@ -215,6 +210,23 @@ div.grid-cont{
   grid-auto-rows: 250px;
   margin-block: 20px;
 }
+
+#nextL{
+  position: fixed;
+  top: 48%;
+  left: 2rem;
+  z-index: 99;
+  cursor: pointer;
+}
+
+#nextR{
+  position: fixed;
+  top: 48%;
+  right: 2rem;
+  z-index: 99;
+  cursor: pointer;
+}
+
 /*
 div.card-container-prev.initialpos{
   height: 10px;

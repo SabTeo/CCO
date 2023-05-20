@@ -31,9 +31,9 @@
         <div id="zonaDisplay"></div>
     </div>
     <img id=esc class="hidden" src="Assets/esc.svg" height="38px" width="38"
-          onclick="$('#overlay').toggleClass('hidden');
-              $('#esc').toggleClass('hidden');
-              $('body').removeClass('noScroll');">
+          onclick="hideOverlay();">
+    <img id=nextL class="hidden" src="Assets/arrow_back.svg" height="38px" width="38" onclick="loadNext('L');">
+    <img id=nextR class="hidden" src="Assets/arrow_back.svg" height="38px" width="38" onclick="loadNext('R');">
     <div class="menu-bar">
       <div class="menu-item">
         <div class="mbtn" onclick="showDialog();">
