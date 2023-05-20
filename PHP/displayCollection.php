@@ -37,7 +37,7 @@
                     $id=$tuple['id'];
                     $p=$tuple['posseduta'];
                     //DEBUG TOGLIERE// 
-                    //if($id>4) $id = '12';
+                    if($id==8) $id = '14';
                     //
                     if($p==1){
                         echo"<div class=\"preview\" id='cc's>
@@ -70,7 +70,6 @@
                             if(statusTxt == \"error\")
                                 alert(\"Errore\" + xhr.status + \":\" + xhr.statusText);
                         });
-                        console.log(this.dataset.position);
                         showOverlay();
                     });
                 });</script>";

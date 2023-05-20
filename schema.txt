@@ -44,4 +44,8 @@ insert into carte(id, nomecarta, descrizione, rarita) values
 (11, 'Squidward Q. Tentacolo', e'L\'emblema di bellezza ed eleganza,l\'apice di ogni creatura marina', 3),
 (12, 'Mongo', 'In ricordo del vero eroe di Shrek 2', 2);
 
+insert into carte(id, nomecarta, descrizione, rarita) values
+(14, 'Shotgun Farmer',e'Il vero \'Guerriero della Leggenda\' del mondo di Dragon Ball', 1)
+
+
 

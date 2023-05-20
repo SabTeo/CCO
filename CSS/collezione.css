@@ -211,7 +211,7 @@ div.grid-cont{
   margin-right: auto;
   width: auto;
   display: grid;
-  grid-template-columns: repeat(2,200px);
+  grid-template-columns: repeat(2,170px);
   grid-auto-rows: 250px;
   margin-block: 20px;
 }

@@ -106,6 +106,8 @@ div.card-fill{
 /* CARD CONTENT */
 .card-fill .previmg{
     height: 50%;
+    /*object-fit: contain;*/
+    object-position: 0 0;
     flex-shrink: 0;
 }
 
