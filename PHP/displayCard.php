@@ -21,7 +21,7 @@
                     <div class=\"card-front\" id =\"card-front\">
                       <div class=\"card-fill\">
                         <div class=\"card-content-big\">
-                          <img src=\"Assets/Images/".$id.".png\" class=\"previmg\">
+                          <img src=\"Assets/Images/".$id.".png\" class=\"previmg\" id=$id>
                           <h4>$nome <hr> </h4>";
                           //carta di rarita 4 oppure no
         if($rar==4)echo   "<a href=$desc target=\"_blank\" rel=\"noopener noreferrer\">$desc</a>";

@@ -47,5 +47,12 @@ insert into carte(id, nomecarta, descrizione, rarita) values
 insert into carte(id, nomecarta, descrizione, rarita) values
 (14, 'Shotgun Farmer',e'Il vero \'Guerriero della Leggenda\' del mondo di Dragon Ball', 1)
 
+insert into carte(id, nomecarta, descrizione, rarita) values
+(15, 'Sogeking','Migliaia di teorie, ma ancora nessuna risposta sulla sua vera identità', 2),
+(17, 'Spongebob (Full Power)','La forma più potente della spugna più famosa al mondo', 1),
+(18, 'Shaggy Rogers (1%)','Si dice che la sua forza non conosca limiti', 3),
+(19, 'Nega Mentone',e'L\'acerrimo nemico del celeberrimo Crimson Mentone', 1),
+(20, 'Ciccio (Prime)',e'\"Io sono infermabile, io sono Cicciogamer89, sono il capobranco dei miei paguri\"', 3);
+
 
 

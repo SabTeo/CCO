@@ -125,6 +125,12 @@ div.card-container{
   overflow: hidden;
 }
 
+/*.card-fill .previmg#20{
+  height: 50%;
+  object-position: 0 40%;
+  flex-shrink: 0;
+}*/
+
 /* da vedere */
 .dropdown{
   min-width:10em;
