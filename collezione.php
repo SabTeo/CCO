@@ -67,13 +67,13 @@
             </ul>
         </div>
       </div>
-      <div class="menu-item">
+      <div class="menu-item" id="mid">
         <form class="check">
             <label for="checco" id="labelcheckbox">Mostra non possedute</label>
             <input type="checkbox" id="checco" ></br>
         </form>
       </div>
-      <div class="menu-item">
+      <div class="menu-item" id="last">
         <div class="dropdown" id="dd2">
             <div class="dropbtn">
               <span class="selected" id="secondodd"></span>

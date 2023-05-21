@@ -143,7 +143,7 @@ function prova(){
         });
         options.forEach(option =>{
             option.addEventListener('click',() =>{
-                selected.innerText=option.innerText;
+                selected.innerHTML=option.innerHTML;
                 //console.log(selected.innerText);
                 //console.log(option.innerText);
                 /*select.classList.remove('select-clicked');*/
@@ -166,7 +166,7 @@ function setMaxQueue(n){
 }
 
 function displayAnim(i){  
-    console.log(maxQueue);
+    //console.log(maxQueue);
         if(i>maxQueue) return; 
         $('[data-queue='+i+']').removeClass('initialpos');
         setTimeout(()=>{displayAnim(i+1)}, 30);

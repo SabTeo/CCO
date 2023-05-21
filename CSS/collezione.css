@@ -135,14 +135,15 @@ div.card-container{
 }
 
 .dropdown{
-  min-width:10em;
   position:relative;
 }
 #dd1{
   left:20px;
+  min-width: 9em;
 }
 #dd2{
   right:20px;
+  min-width: 6em;
 }
 .dropdown * {
   box-sizing: border-box;
@@ -174,7 +175,7 @@ div.card-container{
 }
 
 .dropdown-content {
-  display:none;
+  display:block;
   list-style:none;
   margin: 0px;
   margin-left: 0.5rem;
@@ -189,7 +190,7 @@ div.card-container{
   z-index: 1;
   transition:3s;
   max-height: 0rem;
-  transition: max-height 0.15s ease-out;
+  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
 }
 
 .dropdown-content li{
@@ -212,8 +213,8 @@ div.card-container{
   flex-direction: column;
   justify-content: start;
   opacity:1;
-  max-height: 100rem;
-  transition: max-height 0.15s ease-out;
+  max-height: 10rem;
+  transition: max-height 0.3s ease-in-out;
 }
 
 button.dropbtn {
@@ -338,3 +339,18 @@ div.card-container-prev.initialpos{
   }
 }
 */
+
+@media (max-width:400px){
+  #menu2{
+    flex-wrap: wrap;
+  }
+  #last{
+    order: 0;
+  }
+  #mid{
+    order: 1;
+  }
+  .dropdown{
+    margin-top: 0.5rem;
+  }
+}

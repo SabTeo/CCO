@@ -51,7 +51,8 @@
                     }
                     else{
                         echo"<div class=\"preview\" id ='cc'>
-                        <div class=\"card-container-prev initialpos\" id=\"$id\" data-queue=\"$queue\"> 
+                        <div class=\"card-container-prev initialpos\" id=\"$id\"
+                            data-queue=\"$queue\" style=\"pointer-events: none\"> 
                         <div class=\"shadow\"></div> 
                             <div class=\"card-content\">";
 /*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">

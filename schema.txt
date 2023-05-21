@@ -37,15 +37,15 @@ insert into carte(id, nomecarta, descrizione, rarita) values
 (3, 'Anakin Dripwalker', 'https://www.youtube.com/watch?v=ujFnkh4SwAI', 4),
 (4, 'Minilla', 'È proprio quello che sembra, il figlio brutto di Godzilla apparso nel celebre ottavo film della saga originale', 1)
 (5, e'Settra l\'Imperituro', 'Khemrikhara, Sommo Re di Nehekhara, Signore della Terra, Monarca dei Cieli, Governatore dei Quattro Orizzonti, Leone Possente del Deserto Infinito, Prescelto di Ptra, Sovrano Eterno delle Legioni di Khemri, Sentinella dei Due Regni, insomma avete capito', 1),
+(6, 'Bug Informatico', e'showDescrizione(id) { string s = SELECT desc FROM database WHERE id=id, setDesc( \'', 3),      
 ;
 insert into carte(id, nomecarta, descrizione, rarita) values
 (13, 'Mike Sullivan (fusion)', 'Non era quello che volevamo, ma quello di cui avevamo bisogno', 1),
 (16, 'Groot (baby)', e'\"Io sono Groot!\"', 1),
 (11, 'Squidward Q. Tentacolo', e'L\'emblema di bellezza ed eleganza,l\'apice di ogni creatura marina', 3),
-(12, 'Mongo', 'In ricordo del vero eroe di Shrek 2', 2);
-
-insert into carte(id, nomecarta, descrizione, rarita) values
-(14, 'Shotgun Farmer',e'Il vero \'Guerriero della Leggenda\' del mondo di Dragon Ball', 1)
+(12, 'Mongo', 'In ricordo del vero eroe di Shrek 2', 2)
+(14, 'Shotgun Farmer',e'Il vero \'Guerriero della Leggenda\' del mondo di Dragon Ball', 1),
+;
 
 
 
