@@ -27,7 +27,6 @@
                 $q1=$q1 . $rigafinale;
                 $q1=$q1 . $ordine;
                 $q1=$q1 . ',id';
-
                 $result = pg_query_params($dbconn, $q1,array($utente));
                 $tuple=pg_fetch_array($result, null, PGSQL_ASSOC);
                 $pos = 0;
@@ -38,7 +37,7 @@
                     $id=$tuple['id'];
                     $p=$tuple['posseduta'];
                     if($p==1){
-                        echo"<div class=\"preview\" id='cc's>
+                        echo"<div class=\"preview\" id='cc'>
                             <div class=\"card-container-prev initialpos\" id=\"$id\"
                                 data-position=\"$pos\" data-queue=\"$queue\">  
                                 <div class=\"card-content\">";
