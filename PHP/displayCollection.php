@@ -37,7 +37,7 @@
                     $id=$tuple['id'];
                     $p=$tuple['posseduta'];
                     if($p==1){
-                        echo"<div class=\"preview\" id='cc'>
+                        echo"<div class=\"preview\" id=$id>
                             <div class=\"card-container-prev initialpos\" id=\"$id\"
                                 data-position=\"$pos\" data-queue=\"$queue\">  
                                 <div class=\"card-content\">";

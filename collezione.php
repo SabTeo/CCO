@@ -53,7 +53,7 @@
       </div>
     </div>
     <div class="menu-bar" id="menu2">
-      <div class="menu-item">
+      <div class="menu-item" id="first">
         <p id="orderLabel">Ordina per:</p>
         <div class="dropdown" id="dd1">
             <div class="dropbtn">
@@ -68,8 +68,8 @@
         </div>
       </div>
       <div class="menu-item" id="mid">
+        <p id="labelcheckbox">Mostra non possedute</p>
         <form class="check">
-            <label for="checco" id="labelcheckbox">Mostra non possedute</label>
             <input type="checkbox" id="checco" ></br>
         </form>
       </div>

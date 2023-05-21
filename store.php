@@ -68,12 +68,12 @@
               $c = giftClaimed($connection, $username);
               if(!$c){
                 echo "<p class=\"giftNotice\">Ricompensa riscattata!</p>";
-                return;
+                goto end;
               }
             }
             echo "<p id=\"tlabel\" class=\"giftNotice\">Disponibile tra</p><p id=\"timer\" class=\"giftNotice\"></p>";
             echo "<script> displayTimer() </script>";
-          ?>
+          end: ; ?>
         </div>
       </div>
     </div>

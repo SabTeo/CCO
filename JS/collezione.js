@@ -120,11 +120,11 @@ function riempidropdown(){
     primodd.innerText=sessionStorage.getItem('lastsort').toLowerCase();
     if(sessionStorage.getItem('order')=='asc'){
         //secondodd.innerText='crescente';
-        secondodd.innerHTML='<img src="Assets/sort-desc.svg" class="sortIcon" style="transform: rotate(180deg)"></img>';
+        secondodd.innerHTML='<img src="Assets/sort-desc-w.svg" class="sortIcon" style="transform: rotate(180deg)"></img>';
     }
     else if(sessionStorage.getItem('order')=='desc'){
         //secondodd.innerText='decrescente';
-        secondodd.innerHTML='<img src="Assets/sort-desc.svg" class="sortIcon"></img>';
+        secondodd.innerHTML='<img src="Assets/sort-desc-w.svg" class="sortIcon"></img>';
     }
 }
 
@@ -137,16 +137,18 @@ function prova(){
         const options=dropdown.querySelectorAll('.dropdown-content li');
         const selected=dropdown.querySelector('.selected');
         select.addEventListener('click',()=>{
-             /*select.classList.toggle('select-clicked');*/
+            /*select.classList.toggle('select-clicked');*/
             triangolo.classList.toggle('triangolino-rotate');
             menu.classList.toggle('menu-open');
         });
         options.forEach(option =>{
             option.addEventListener('click',() =>{
-                selected.innerHTML=option.innerHTML;
-                //console.log(selected.innerText);
-                //console.log(option.innerText);
-                /*select.classList.remove('select-clicked');*/
+                if(option.innerHTML.trim()=='<img src="Assets/sort-desc.svg" class="sortIcon">')
+                    selected.innerHTML='<img src="Assets/sort-desc-w.svg" class="sortIcon"></img>'
+                else if(option.innerHTML.trim()=='<img src="Assets/sort-desc.svg" class="sortIcon" style="transform: rotate(180deg)">')
+                    selected.innerHTML='<img src="Assets/sort-desc-w.svg" class="sortIcon" style="transform: rotate(180deg)">'
+                else
+                selected.innerHTML=option.innerHTML
                 triangolo.classList.remove('triangolino-rotate');
                 menu.classList.remove('menu-open');
                 options.forEach(option=>{ 

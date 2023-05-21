@@ -57,6 +57,11 @@ div.central{
   align-items: center;
   background-color: rgba(1, 57, 135, 0.25);
   opacity: 100%;
+  height: 4rem;
+}
+
+#menu2 .menu-item{
+  height: 100%;
 }
 
 form.check{
@@ -68,16 +73,12 @@ form.check{
 }
 
 #labelcheckbox{
-  flex-shrink: 1;
   text-align: center;
-}
-
-#checco{
-  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 #zonaCarte{
-  padding-top: 20px;
+  margin-top: 1.2rem;
   flex-grow: 1;
   flex-shrink: 1;
   width: 100%;
@@ -135,19 +136,29 @@ div.card-container{
 }
 
 .dropdown{
-  position:relative;
+  max-height: 42px;
 }
+
 #dd1{
-  left:20px;
+  margin-left:20px;
   min-width: 9em;
 }
+
+#dd1 .dropdown-content{
+  min-width: 8em;
+}
+
 #dd2{
-  right:20px;
+  margin-right:20px;
   min-width: 6em;
 }
-.dropdown * {
-  box-sizing: border-box;
+
+#dd2 .dropdown-content{
+  min-width: 5em;
+  margin-left: 0.5rem;
 }
+
+
 .dropbtn{
   background-color:  rgba(4, 20, 112, 0.9);
   display:flex;
@@ -182,7 +193,6 @@ div.card-container{
   padding:0em 0em;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 9rem;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
@@ -198,7 +208,6 @@ div.card-container{
   padding: 0.7em 0.5em;
   cursor:pointer;
   text-decoration: none;
-  display: block;
 }
 .dropdown-content li:hover{
   background-color: #ddd;
@@ -260,13 +269,12 @@ img.sortIcon{
   width: 0.9em;
 }
 
-
 div.card-container-prev.initialpos{
   height: 90px;
   width: 90px;
 }
 
-/* riduzione a icona bottoni del menu */
+/* riduzione a icona bottoni del menu e riarrangiamento menu2*/
 @media screen and (max-width: 599px){
   .mbtn > h3{
       display: none;
@@ -277,12 +285,97 @@ div.card-container-prev.initialpos{
   #cart{
       margin-inline: 15px;
   }
+  #dd1{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  #dd2{
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+  #menu2{
+    flex-wrap: wrap;
+  }
+  #first{
+    flex-grow: 2;
+    min-width: 160px;
+  }
+  #last{
+    flex-grow: 1;
+    order: 0;
+    justify-content: center;
+  }
+  #mid{
+    flex-grow: 3;
+    order: 1;
+    flex-direction: row-reverse;
+    justify-content: center;
+    min-width: 220px;
+  }
 }
 
+/* flex wrapping */
+@media screen and (max-width: 491px){
+  #dd1{
+    margin-left: 1rem;
+  }
+  #dd2{
+    min-width: 9rem;
+  }
+
+  #dd2 .dropdown-content{
+    min-width: 8rem;
+  }
+  
+  #first{
+    flex-grow: 1;
+    justify-content: right;
+    margin: 0px;
+  }
+  #last{
+    flex-grow: 1;
+    order: 0;
+    justify-content: left;
+    margin: 0px;
+  }
+  #mid{
+    flex-grow: 1;
+    order: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    background-color: rgba(1, 57, 135, 0.25);
+    height: auto !important;
+  }
+  #labelcheckbox{
+    margin: 0.7rem 0.3rem 1rem 0rem;
+
+  }
+  #checco{
+    margin-top: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  .central{
+    margin-top: 1.5rem;
+  }
+  #nextR{
+    right: 5%;
+  }
+  #nextL{
+    left: 5%;
+  }
+}
+
+/*griglia*/
 @media (min-width: 560px){
   div.grid-cont{
       grid-template-columns: repeat(3,180px);
       grid-auto-rows: 230px;
+  }
+  .card-container-prev:hover{
+    cursor: pointer;
+    transition: transform 0.8s;
+    transform: scale(1.2);
   }
 }
 @media (min-width: 630px){
@@ -304,53 +397,5 @@ div.card-container-prev.initialpos{
   div.grid-cont{
       grid-template-columns: repeat(5,200px);
       grid-auto-rows: 240px;
-  }
-}
-
-/*
-@media (min-width:400px)and (max-width:540px){
-  #checco{
-    left:70px;
-  }
-  #labelcheckbox{
-    position:relative;
-    left:35px;
-  }
-  #dd1{
-    left:10px;
-  }
-  #dd2{
-    right:10px;
-  }
-}
-@media (max-width:450px){
-  #checco{
-    left:54px;
-  }
-  #labelcheckbox{
-    position:relative;
-    left:20px;
-  }
-  #dd1{
-    left:10px;
-  }
-  #dd2{
-    right:10px;
-  }
-}
-*/
-
-@media (max-width:400px){
-  #menu2{
-    flex-wrap: wrap;
-  }
-  #last{
-    order: 0;
-  }
-  #mid{
-    order: 1;
-  }
-  .dropdown{
-    margin-top: 0.5rem;
   }
 }
