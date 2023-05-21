@@ -42,29 +42,37 @@ function buyAnim(){
     }, 2200);
 }
 
+//ora e minuto inizio periodo riscossione
+var hour = 15;
+var minute = 00;
+
 function displayTimer(){
-    calculateTimer();
-    setInterval(calculateTimer, 60000);
+    today = new Date();
+    nextAv = new Date(today.getFullYear(), today.getMonth(), today.getDate(), hour, minute);
+    //se l'ora di oggi è gia passata allora passo a domani
+    if(!(today<nextAv)) nextAv = new Date(today.getFullYear(), today.getMonth(), today.getDate()+1, hour, minute);
+    calculateTimer(nextAv);
+    var interval = setInterval(()=>{x=calculateTimer(nextAv);
+                                        if(x<0){
+                                            clearInterval(interval)
+                                            window.location.reload();
+                                        }
+                                    }, 5000);
 }
 
-function calculateTimer(){
-    hour = 15;
+function calculateTimer(nextAv){
     today = new Date();
-    nextAv = new Date(today.getFullYear(), today.getMonth(), today.getDate(), hour)
-    //se l'ora di oggi è gia passata allora passo a domani
-    if(!(today<nextAv)) nextAv = new Date(today.getFullYear(), today.getMonth(), today.getDate()+1, hour);
-    //console.log(String(nextAv));
     msLeft = nextAv - today;
+    if(msLeft<0) return(msLeft);
     msInHour = 3600000;
     msInMinute = 60000;
     hLeft = Math.floor(msLeft/msInHour);
     minLeft = Math.ceil((msLeft%msInHour)/msInMinute);
-    if(hLeft==0 && minLeft==0){
-        winbdow.location.reload();
-    }
-    plural = (hLeft==1)?' ora e ':' ore e '
-    $('#timer').html(String(hLeft)+plural+String(minLeft)+' minuti');
+    if(minLeft==60) minLeft=59;
+    pluralh = (hLeft==1)?' ora e ':' ore e '
+    $('#timer').html(String(hLeft)+pluralh+String(minLeft)+' minuti');
     $('.tooltipTimer').html('(disponibile tra: '+ String(hLeft)+' ore e '+String(minLeft)+' minuti)');
+    return(msLeft);
 }
 
 // ATTEZIONE var valuta e var user inizializzate in php

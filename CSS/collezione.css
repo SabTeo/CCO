@@ -239,7 +239,7 @@ div.grid-cont{
   margin-right: auto;
   width: auto;
   display: grid;
-  grid-template-columns: repeat(2,170px);
+  grid-template-columns: repeat(2,11.3rem);
   grid-auto-rows: 210px;
   margin-block: 20px;
 }
