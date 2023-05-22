@@ -67,6 +67,38 @@ function controllacheck(){
     }
 }
 
+function propagationdd1(e){
+    const menu2=document.querySelector('#dc2');
+    const triangolo2=document.querySelector('#t2');
+    if($("#dc2").hasClass('menu-open')){
+        menu2.classList.remove('menu-open');
+        triangolo2.classList.toggle('triangolino-rotate');
+    }
+    e.stopPropagation();
+}
+function propagationdd2(e){
+    const menu1=document.querySelector('#dc1');
+    const triangolo1=document.querySelector('#t1');
+    if($("#dc1").hasClass('menu-open')){
+        menu1.classList.remove('menu-open');
+        triangolo1.classList.toggle('triangolino-rotate');
+    }
+    e.stopPropagation();
+}
+function chiusuradd(){
+    const menu1=document.querySelector('#dc1');
+    const menu2=document.querySelector('#dc2');
+    const triangolo1=document.querySelector('#t1');
+     const triangolo2=document.querySelector('#t2');
+    if($("#dc1").hasClass('menu-open')){
+                  menu1.classList.remove('menu-open');
+                  triangolo1.classList.toggle('triangolino-rotate');
+    }
+     if($("#dc2").hasClass('menu-open')){
+                  menu2.classList.remove('menu-open');
+                  triangolo2.classList.toggle('triangolino-rotate');
+     }
+}
 //ATTENZIONE funzioni chiamate da php
 //indici posizionali dell'ultima carta in display e della carta in ultima posizione
 var currentIndex;
@@ -128,7 +160,7 @@ function riempidropdown(){
     }
 }
 
-function prova(){
+function funzionidropdown(){
     const dropdowns= document.querySelectorAll(".dropdown");
     dropdowns.forEach(dropdown =>{
         const select=dropdown.querySelector('.dropbtn');

@@ -36,10 +36,11 @@
                     $nome=$tuple['nomecarta'];
                     $id=$tuple['id'];
                     $p=$tuple['posseduta'];
+                    $rar=$tuple['rarita'];
                     if($p==1){
                         echo"<div class=\"preview\" id=$id>
                             <div class=\"card-container-prev initialpos\" id=\"$id\"
-                                data-position=\"$pos\" data-queue=\"$queue\">  
+                                data-position=\"$pos\" data-queue=\"$queue\" data-rarity=\"$rar\">  
                                 <div class=\"card-content\">";
 /*abbinmamento immagine--->*/   echo "<img src=\"Assets/Images/".$id.".png\" class=\"previmg\">
                                 </div>

@@ -56,11 +56,11 @@
       <div class="menu-item" id="first">
         <p id="orderLabel">Ordina per:</p>
         <div class="dropdown" id="dd1">
-            <div class="dropbtn">
+            <div class="dropbtn" id="dropbtn1">
               <span class="selected" id="primodd"></span>
-              <div class="triangolino"></div>
+              <div class="triangolino" id="t1"></div>
             </div>
-            <ul class="dropdown-content">
+            <ul class="dropdown-content" id="dc1">
               <li class="active" id="default">id</li>
               <li id="nome">nome</li>
               <li id="rarita">rarità</li>
@@ -75,11 +75,11 @@
       </div>
       <div class="menu-item" id="last">
         <div class="dropdown" id="dd2">
-            <div class="dropbtn">
+            <div class="dropbtn" id="dropbtn2">
               <span class="selected" id="secondodd"></span>
-              <div class="triangolino"></div>
+              <div class="triangolino" id="t2"></div>
             </div>
-            <ul class="dropdown-content">
+            <ul class="dropdown-content" id="dc2">
               <li class="active" id="crescente">
               <img src="Assets/sort-desc.svg" class="sortIcon" style="transform: rotate(180deg)"></img>
               </li>
@@ -102,7 +102,10 @@
               $("#crescente").click(function(){cambiaordine('asc')});
               $("#decrescente").click(function(){cambiaordine('desc')});
               $("#checco").click(function(){cambiastatocheck()});
-              prova();
+              $("#dropbtn1").click(function(e){propagationdd1(e)});
+              $("#dropbtn2").click(function(e){propagationdd2(e)});
+              $(document).click(function(){chiusuradd()});
+              funzionidropdown();
               riempidropdown();
             });
         </script>

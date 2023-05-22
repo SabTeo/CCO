@@ -270,6 +270,15 @@ div.card-container2{
     }
   }
 
-  [data-position="3"]{
-    background-color: var(--epic);
+  [data-rarity="1"]{
+    background-color: var(--common) !important;
+  }
+  [data-rarity="2"]{
+    background-color: var(--rare) !important;
+  }
+  [data-rarity="3"]{
+    background-color: var(--epic) !important;
+  }
+  [data-rarity="4"]{
+    background-color: var(--epic) !important;
   }
