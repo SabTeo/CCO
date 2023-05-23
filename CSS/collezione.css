@@ -77,6 +77,10 @@ form.check{
   white-space: nowrap;
 }
 
+#checco{
+  accent-color: rgb(255, 115, 0);
+}
+
 #zonaCarte{
   margin-top: 1.2rem;
   flex-grow: 1;
@@ -164,7 +168,8 @@ div.card-container{
   display:flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px #2a2f3b solid;
+  /*border: 2px #2a2f3b solid;*/
+  border: 2px rgba(194, 200, 205, 0.822) solid;
   border-radius: 0.5rem;
   padding:0.6rem;
   cursor:pointer;
@@ -224,14 +229,6 @@ div.card-container{
   opacity:1;
   max-height: 10rem;
   transition: max-height 0.3s ease-in-out;
-}
-
-button.dropbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px;
-  font-size: 16px;
-  border: none;
 }
 
 div.grid-cont{

@@ -8,6 +8,7 @@ function verifyTaken(field, value){
         request.onload = function(e){
             resolve(e.target.responseText);
         }
+        request.onerror = ()=>{resolve('error')};
         request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         if(field=='username')body = 'type=VER_U' + '&username=' + value;
         else if(field=='mail')body = 'type=VER_E' + '&mail=' + value;
@@ -44,6 +45,10 @@ async function isUserValid(){
         $('#userfield').css('border-color', 'red');
         return false;
     }
+    else if(res=='error'){
+        alert('Errore interno');
+        return false;
+    }
     else{
         $('#invUser').html('');
         $('#userfield').css('border-color', 'forestgreen');
@@ -68,6 +73,10 @@ async function isMailValid(){
     if(res=='TAKEN_E'){
         $('#invMail').html('Esiste già un utente con questa email');
         $('#mailfield').css('border-color', 'red');
+        return false;
+    }
+    else if(res=='error'){
+        alert('Errore interno');
         return false;
     }
     else{
@@ -105,13 +114,6 @@ function isPassValid(){
         $('#passwordfield').css('border-color', 'red');
         return false;
     }
-    /*
-    if(value.match(/\W/)==null){
-        $('#invPass').html('la password deve contenere almeno una lettera maiuscola');
-        $('#passwordfield').css('border-color', 'red');
-        return false;
-    }
-    */
     $('#invPass').html('');
     $('#passwordfield').css('border-color', 'forestgreen');
     return true;

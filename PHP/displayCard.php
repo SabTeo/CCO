@@ -21,6 +21,7 @@
                     <div class=\"card-front\" id =\"card-front\">
                       <div class=\"card-fill\">
                         <div class=\"card-content-big\">
+                          <div class=\"num\">$id</div>
                           <img src=\"Assets/Images/".$id.".png\" class=\"previmg\">
                           <h4>$nome <hr> </h4>";
                           //carta di rarita 4 oppure no
