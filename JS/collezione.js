@@ -191,6 +191,36 @@ function funzionidropdown(){
         });
     });
 }
+function caricaactive(){
+    const options=document.querySelectorAll("#dc1 li");
+    options.forEach(option=>{ 
+        option.classList.remove('active');
+    });
+    if(sessionStorage.getItem('lastsort')=='ID'){
+        const id=document.querySelector("#default");
+        id.classList.add('active');
+    }
+    else if(sessionStorage.getItem('lastsort')=='Nome'){
+        const id=document.querySelector("#nome");
+        id.classList.add('active');
+    }
+    else if(sessionStorage.getItem('lastsort')=='Rarità'){
+        const id=document.querySelector("#rarita");
+        id.classList.add('active');
+    }
+    const options2=document.querySelectorAll("#dc2 li");
+    options2.forEach(option=>{ 
+        option.classList.remove('active');
+    });
+    if(sessionStorage.getItem('order')=='asc'){
+        const id=document.querySelector("#crescente");
+        id.classList.add('active');
+    }
+    else if(sessionStorage.getItem('order')=='desc'){
+        const id=document.querySelector("#decrescente");
+        id.classList.add('active');
+    }
+}
 //ATTENZIONE funzione chiamata da php
 //indice dell'ultima carta in coda per l'animazione
 var maxQueue;

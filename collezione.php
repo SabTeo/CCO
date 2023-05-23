@@ -107,6 +107,7 @@
               $(document).click(function(){chiusuradd()});
               funzionidropdown();
               riempidropdown();
+              caricaactive();
             });
         </script>
     </div>
